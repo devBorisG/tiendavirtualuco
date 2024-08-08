@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">tiendavirtualuco</string>
+    <string name="bitcoin_vector">Bitcoin vector</string>
+    <string name="cart_vector">Cart Vector</string>
+    <string name="buscar">Buscar</string>
+    <string name="search_hint">Buscar producto</string>
+    <string name="productos_title">Productos</string>
 </resources>
