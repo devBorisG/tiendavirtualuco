@@ -5,4 +5,11 @@
     <string name="buscar">Buscar</string>
     <string name="search_hint">Buscar producto</string>
     <string name="productos_title">Productos</string>
+    <string name="search_icon">Search icon</string>
+    <string name="icono_de_venta">Icono de venta</string>
+    <string name="icono_de_carrito">Icono de carrito</string>
+    <string name="mis_compras">Mis compras</string>
+    <string name="icono_compras">Icono compras</string>
+    <string name="icono_busqueda">Icono busqueda</string>
+    <string name="ofertas">ofertas\n</string>
 </resources>

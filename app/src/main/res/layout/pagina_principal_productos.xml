@@ -5,97 +5,165 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/productos_title"
-        android:layout_width="106dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="43dp"
-        android:text="@string/productos_title"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cabecera_hm_prodcutos"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/primary_color"
+        >
+
+        <TextView
+            android:id="@+id/cabecera_titulo_hm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/buscar"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cabecera_hm_prodcutos"
+            app:layout_constraintStart_toStartOf="@+id/cabecera_hm_prodcutos"
+            app:layout_constraintTop_toTopOf="@+id/cabecera_hm_prodcutos"
+            app:layout_constraintVertical_bias="0.075" />
+
+        <View
+            android:id="@+id/fondo_busqueda"
+            android:layout_width="366dp"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/cabecera_hm_prodcutos"
+            app:layout_constraintEnd_toEndOf="@id/cabecera_hm_prodcutos"
+            app:layout_constraintHorizontal_bias="0.363"
+            app:layout_constraintStart_toStartOf="@+id/cabecera_hm_prodcutos"
+            app:layout_constraintTop_toTopOf="@+id/cabecera_hm_prodcutos"
+            app:layout_constraintVertical_bias="0.84" />
+
+        <EditText
+            android:id="@+id/entrada_busqueda"
+            android:layout_width="330dp"
+            android:layout_height="30dp"
+            android:autofillHints="Buscar producto"
+            android:background="@android:color/transparent"
+            android:hint="@string/search_hint"
+            android:inputType="text"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fondo_busqueda"
+            app:layout_constraintEnd_toEndOf="@+id/fondo_busqueda"
+            app:layout_constraintHorizontal_bias="0.833"
+            app:layout_constraintStart_toStartOf="@+id/fondo_busqueda"
+            app:layout_constraintTop_toTopOf="@+id/fondo_busqueda"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/icono_busqueda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/search_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/fondo_busqueda"
+            app:layout_constraintEnd_toStartOf="@+id/entrada_busqueda"
+            app:layout_constraintStart_toStartOf="@+id/fondo_busqueda"
+            app:layout_constraintTop_toTopOf="@+id/fondo_busqueda"
+            app:srcCompat="@drawable/baseline_search_24" />
+
+        <ImageView
+            android:id="@+id/icono_venta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="68dp"
+            android:contentDescription="@string/icono_de_venta"
+            app:layout_constraintEnd_toEndOf="@id/cabecera_hm_prodcutos"
+            app:layout_constraintTop_toTopOf="@id/cabecera_hm_prodcutos"
+            app:srcCompat="@drawable/baseline_currency_bitcoin_24" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="28dp"
+            android:contentDescription="@string/icono_de_carrito"
+            app:layout_constraintEnd_toEndOf="@id/cabecera_hm_prodcutos"
+            app:layout_constraintTop_toTopOf="@id/cabecera_hm_prodcutos"
+            app:srcCompat="@drawable/baseline_shopping_cart_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F6F9FF"
+        app:layout_constraintTop_toBottomOf="@id/cabecera_hm_prodcutos"
+        app:layout_constraintBottom_toTopOf="@id/pie_hm_productos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pie_hm_productos"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <View
-        android:id="@+id/header"
-        android:layout_width="411dp"
-        android:layout_height="134dp"
-        android:background="@color/primary_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/icono_compras"
+            android:layout_width="49dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/icono_compras"
+            app:layout_constraintBottom_toBottomOf="@id/pie_hm_productos"
+            app:layout_constraintStart_toStartOf="@id/pie_hm_productos"
+            app:layout_constraintTop_toTopOf="@id/pie_hm_productos"
+            app:layout_constraintVertical_bias="0.058"
+            app:srcCompat="@drawable/baseline_home_24" />
 
-    <ImageView
-        android:id="@+id/sell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:contentDescription="@string/bitcoin_vector"
-        app:layout_constraintBottom_toBottomOf="@+id/header"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.21"
-        app:srcCompat="@drawable/baseline_currency_bitcoin_24" />
+        <TextView
+            android:id="@+id/texto_compras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="11sp"
+            android:text="@string/mis_compras"
+            app:layout_constraintBottom_toBottomOf="@id/pie_hm_productos"
+            app:layout_constraintStart_toStartOf="@id/pie_hm_productos"
+            app:layout_constraintTop_toBottomOf="@id/icono_compras"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="@string/cart_vector"
-        app:layout_constraintBottom_toBottomOf="@+id/header"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.21"
-        app:srcCompat="@drawable/baseline_shopping_cart_24" />
+        <ImageView
+            android:id="@+id/icono_busqueda_pie"
+            android:layout_width="39dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="104dp"
+            android:contentDescription="@string/icono_busqueda"
+            app:layout_constraintBottom_toBottomOf="@id/pie_hm_productos"
+            app:layout_constraintStart_toStartOf="@id/pie_hm_productos"
+            app:layout_constraintTop_toTopOf="@id/pie_hm_productos"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_search_24_black" />
 
-    <TextView
-        android:id="@+id/busar_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="43dp"
-        android:text="@string/buscar"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/header"
-        app:layout_constraintStart_toStartOf="@+id/header"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:radius="16dp"
-        android:id="@+id/contenedor_busqueda"
-        android:layout_width="377dp"
-        android:layout_height="40dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/header"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.689" />
+        <TextView
+            android:id="@+id/texto_ofertas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/ofertas"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/pie_hm_productos"
+            app:layout_constraintStart_toStartOf="@id/pie_hm_productos"
+            app:layout_constraintTop_toBottomOf="@id/icono_busqueda_pie"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/input_busqueda"
-        android:layout_width="374dp"
-        android:layout_height="39dp"
-        android:autofillHints=""
-        android:background="@android:color/transparent"
-        android:hint="@string/search_hint"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/contenedor_busqueda"
-        app:layout_constraintEnd_toEndOf="@+id/contenedor_busqueda"
-        app:layout_constraintStart_toStartOf="@+id/contenedor_busqueda"
-        app:layout_constraintTop_toTopOf="@+id/contenedor_busqueda" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
