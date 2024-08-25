@@ -49,5 +49,7 @@
     <string name="icono_de_favoritos">Icono de favoritos</string>
     <string name="icono_de_historal_de_compras">Icono de historal de compras</string>
     <string name="icono_de_mis_productos">Icono de mis productos</string>
-
+    <string name="imagen_del_producto">Imagen del producto</string>
+    <string name="icono_de_me_gusta">Icono de me gusta</string>
+    <string name="icono_de_agregar">icono de agregar</string>
 </resources>
