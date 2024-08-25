@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">tiendavirtualuco</string>
+
+    <string name="_1_9998887776_ninfo_tradly_co">+1 9998887776\ninfo@tradly.co</string>
+    <string name="trazabilidad">Trazabilidad</string>
+    <string name="imagen_soporte">Imagen soporte</string>
+    <string name="id">Id:</string>
+    <string name="producto">Producto:</string>
+    <string name="detalle">Detalle</string>
+    <string name="id_producto">Id producto: </string>
+    <string name="imagen_del_equipo_tecnico">Imagen del equipo tecnico</string>
+
+    <string name="informacion_equipo">Equipo de trazabilidad\n+1 9998887776\ninfo@tradly.co</string>
+    <string name="informacion_equipo_android_textalignment">informacion_equipo android:textAlignment=</string>
+    <string name="seguimiento_de_pedido">Seguimiento de Pedido</string>
+    <string name="nombre_producto">Nombre producto</string>
+    <string name="imagen_del_equipo_t_cnico">Imagen del equipo técnico</string>
+    <string name="fecha_despacho">Fecha Despacho:</string>
+    <string name="vendedor">Vendedor:</string>
+    <string name="comprador">Comprador:</string>
+    <string name="detalle_comprador">Detalle Comprador</string>
+    <string name="nombre">Nombre: </string>
+    <string name="celular">Celular: </string>
+    <string name="correo_electronico">Correo Electronico: </string>
+    <string name="fecha_creacion">Fecha de creacion de cuenta: </string>
+    <string name="volver">Volver</string>
+    <string name="detalle_vendedor">Detalle Vendedor</string>
+    <string name="egresos">Egresos: </string>
+    <string name="compradores">Compradores</string>
+    <string name="vendedores">Vendedores</string>
+    <string name="listado_vendedores">Listado de Vendedores</string>
+    <string name="listado_compradores">Listado de Compradores</string>
+
     <string name="bitcoin_vector">Bitcoin vector</string>
     <string name="cart_vector">Cart Vector</string>
     <string name="buscar">Buscar</string>
