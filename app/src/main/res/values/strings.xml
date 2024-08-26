@@ -11,7 +11,7 @@
     <string name="precio_oferta">Precio Oferta:</string>
     <string name="ubicacion">Ubicacion</string>
     <string name="Descripcion">Descripcion</string>
-    <string name="productos">Productos:</string>
+    <string name="productos">Productos</string>
     <string name="editar_producto">Editar Producto:</string>
     <string name="eliminar">Eliminar:</string>
     <string name="cancelar">Cancelar:</string>
@@ -64,4 +64,7 @@
     <string name="imagen_del_producto">Imagen del producto</string>
     <string name="icono_de_me_gusta">Icono de me gusta</string>
     <string name="icono_de_agregar">icono de agregar</string>
+    <string name="categorias">Categoria</string>
+    <string name="max_4_fotos_del_producto">Max. 4 fotos del producto</string>
+    <string name="Devolver">devolver</string>
 </resources>
