@@ -80,7 +80,7 @@
 
     <!-- Icon and Text for Busqueda -->
     <ImageView
-        android:id="@+id/ic_search_footer"
+        android:id="@+id/ic_search_offers"
         android:layout_width="39dp"
         android:layout_height="35dp"
         android:contentDescription="@string/icono_busqueda"
