@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#33907C"
+        android:padding="16dp"
+        android:text="@string/mis_productos"
+        android:textColor="@android:color/white"
+
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1.0" />
+
+    <ImageView
+        android:id="@+id/ImageViewCorazon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/imagen_del_equipo_t_cnico"
+        android:src="@drawable/baseline_favorite_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ImageViewCarrito"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/imagen_del_equipo_t_cnico"
+        android:src="@drawable/carrito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NoTienesProductos"
+
+        android:layout_width="289dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="256dp"
+        android:autoText="true"
+        android:text="Tu no tienes ningun producto publicado"
+        android:textSize="24sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo" />
+
+    <Button
+        android:id="@+id/btnOrderTracking"
+        android:layout_width="254dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="src_over"
+        android:text="Añadir Producto"
+
+        android:textColor="#33907C"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NoTienesProductos"
+        app:layout_constraintVertical_bias="0.603"
+        app:layout_constraintWidth_percent="0.9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
