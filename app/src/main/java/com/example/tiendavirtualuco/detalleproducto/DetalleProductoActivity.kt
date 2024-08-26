@@ -8,7 +8,6 @@ import com.example.tiendavirtualuco.R
 class DetalleProductoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.detalle_producto)
     }
 }
