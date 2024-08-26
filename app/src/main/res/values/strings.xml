@@ -1,11 +1,23 @@
 <resources>
     <string name="app_name">tiendavirtualuco</string>
 
-    <string name="_1_9998887776_ninfo_tradly_co">+1 9998887776\ninfo@tradly.co</string>
-    <string name="trazabilidad">Trazabilidad</string>
-    <string name="imagen_soporte">Imagen soporte</string>
+    <string name="añadir_producto">Añadir Producto</string>
+    <string name="añadir_foto">Añadir foto</string>
+    <string name="no_hay_productos_publicados">Tu no tienes ningun producto publicado</string>
     <string name="id">Id:</string>
+    <string name="categoria">Categoria</string>
     <string name="producto">Producto:</string>
+    <string name="precio">Precio:</string>
+    <string name="precio_oferta">Precio Oferta:</string>
+    <string name="ubicacion">Ubicacion</string>
+    <string name="Descripcion">Descripcion</string>
+    <string name="productos">Productos:</string>
+    <string name="editar_producto">Editar Producto:</string>
+    <string name="eliminar">Eliminar:</string>
+    <string name="cancelar">Cancelar:</string>
+    <string name="eliminar_Seguro">¿Seguro que deseas eliminar ‘Mueble De Baño’ de tus productos?:</string>
+
+
     <string name="detalle">Detalle</string>
     <string name="id_producto">Id producto: </string>
     <string name="imagen_del_equipo_tecnico">Imagen del equipo tecnico</string>
@@ -19,7 +31,7 @@
     <string name="vendedor">Vendedor:</string>
     <string name="comprador">Comprador:</string>
     <string name="detalle_comprador">Detalle Comprador</string>
-    <string name="nombre">Nombre: </string>
+    <string name="nombre">Nombre </string>
     <string name="celular">Celular: </string>
     <string name="correo_electronico">Correo Electronico: </string>
     <string name="fecha_creacion">Fecha de creacion de cuenta: </string>

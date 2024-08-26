@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#33907C"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/añadir_producto"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1.0" />
+
+    <Button
+        android:id="@+id/btAñadirFoto"
+        android:layout_width="165dp"
+        android:layout_height="126dp"
+
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FDF6FE"
+        android:backgroundTintMode="src_over"
+        android:text="@string/añadir_foto"
+
+        android:textColor="#33907C"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <TextView
+        android:id="@+id/NoTienesProductos"
+
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:autoText="false"
+        android:text="Max. 4 fotos del producto"
+        android:textColor="#B6B8BC"
+        android:textSize="20sp"
+
+        app:autoSizeTextType="none"
+        app:layout_constraintTop_toBottomOf="@+id/btAñadirFoto"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NoTienesProductos"
+        tools:ignore="MissingConstraints">
+
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="Categoria"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.361"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categoria"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/precio"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Precio"
+                android:inputType="number"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/precio_oferta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="100"
+                android:hint="Precio Oferta"
+                android:inputType="number"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="@string/ubicacion"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="143dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="@string/Descripcion"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/añadir_producto"
+        android:layout_width="0dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/añadir_producto"
+        android:textSize="34sp"
+        android:backgroundTint="@color/primary_color"
+        android:backgroundTintMode="src_over"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/Devolver"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="@color/primary_color"
+        app:icon="@drawable/flecha_blanca"
+        app:iconTintMode="src_atop"
+        android:text="@string/Descripcion"
+        app:layout_constraintBottom_toBottomOf="@+id/Titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

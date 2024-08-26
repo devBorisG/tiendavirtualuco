@@ -57,7 +57,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="256dp"
         android:autoText="true"
-        android:text="Tu no tienes ningun producto publicado"
+        android:text="@string/no_hay_productos_publicados"
         android:textSize="24sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
         android:backgroundTintMode="src_over"
-        android:text="Añadir Producto"
+        android:text="@string/añadir_producto"
 
         android:textColor="#33907C"
         android:textSize="27sp"
