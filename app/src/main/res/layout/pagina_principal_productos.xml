@@ -60,7 +60,7 @@
             android:background="@android:color/transparent"
             android:hint="@string/search_hint"
             android:inputType="text"
-            android:textSize="11sp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="@+id/fondo_busqueda"
             app:layout_constraintEnd_toEndOf="@+id/fondo_busqueda"
             app:layout_constraintHorizontal_bias="0.833"
@@ -121,7 +121,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:paddingBottom="16dp"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -199,7 +198,8 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/mis_compras"
-            android:textSize="11sp"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="parent"
@@ -223,7 +223,8 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/ofertas"
-            android:textSize="11sp"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -247,7 +248,8 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/favoritos"
-            android:textSize="11sp"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="@id/guideline2"
@@ -271,7 +273,8 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/historial_compras"
-            android:textSize="11sp"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="@id/guideline3"
@@ -294,7 +297,8 @@
             android:id="@+id/titulo_tienda"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:textSize="12sp"
+            android:layout_marginTop="0dp"
             android:text="@string/mis_productos"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
@@ -303,8 +307,5 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:gravity="center" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
