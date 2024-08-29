@@ -11,17 +11,174 @@
         android:id="@+id/cabeceraView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cuerpoDtProducto"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#F6F9FF"
-        app:layout_constraintTop_toBottomOf="@id/cabeceraView"
+        android:background="#F8F8F8"
         app:layout_constraintBottom_toTopOf="@id/pieView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cabeceraView"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Boton para devolverse-->
+        <ImageView
+            android:id="@+id/btnAtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/primary_color" />
+
+        <!-- Imagen del producto -->
+        <ImageView
+            android:id="@+id/imgProducto"
+            android:layout_width="340dp"
+            android:layout_height="160dp"
+            android:layout_margin="5dp"
+            android:background="@color/primary_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnAtras"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Titulo del producto -->
+        <TextView
+            android:id="@+id/tvTituloProducto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Monitor LG UltraGear 27GQ50F LCD 27\' negro 100V/240V"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/imgProducto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/tvPrecioProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$725.000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloProducto"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Original Price -->
+        <TextView
+            android:id="@+id/tvPrecioOriginal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$870.000"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tvPrecioProducto"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvPrecioProducto"
+            android:layout_marginStart="8dp" />
+
+        <!-- Store Name and Visit Button -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contenedorTienda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvPrecioOriginal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/imgIconoTienda"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_store_mall_directory_24"
+                android:contentDescription="@string/icono_tienda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNombreTienda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="JAP STORE"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/imgIconoTienda"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnVisitar"
+                android:layout_marginStart="8dp" />
+
+            <Button
+                android:id="@+id/btnVisitar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/boton_visitar"
+                android:backgroundTint="@color/primary_color"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Caracteristicas del producto -->
+        <TextView
+            android:id="@+id/tvDescripcionProducto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="• Voltaje: 100V/240V\n• Tamaño de la pantalla: 27 \'\n• Pantalla LCD de 27\.\n• Tiene una resolución de 1920px-1080px.\n• Relación de aspecto de 16:9.\n• Panel VA.\n• Su brillo es de 250cd/m².\n• Con conexión 2 HDMI."
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/contenedorTienda"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/contenedorBotonesPie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvDescripcionProducto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnAgregarCarrito"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/boton_agregar_carrito"
+                android:backgroundTint="@color/primary_color"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnComprar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/boton_comprar"
+                android:backgroundTint="@color/primary_color"
+                android:textColor="@color/white"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

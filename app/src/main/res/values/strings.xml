@@ -52,4 +52,9 @@
     <string name="imagen_del_producto">Imagen del producto</string>
     <string name="icono_de_me_gusta">Icono de me gusta</string>
     <string name="icono_de_agregar">icono de agregar</string>
+    <string name="icono_tienda">Icono de la tienda</string>
+
+    <string name="boton_visitar">Visitar</string>
+    <string name="boton_comprar">Comprar</string>
+    <string name="boton_agregar_carrito">Agregar al carrito</string>
 </resources>
