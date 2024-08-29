@@ -8,15 +8,18 @@
     android:layout_height="match_parent">
 
 
+
+
     <TextView
         android:id="@+id/Titulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+
         android:background="#33907C"
         android:padding="16dp"
         android:text="@string/mis_productos"
-        android:textColor="@android:color/white"
 
+        android:textColor="@android:color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,25 +52,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/NoTienesProductos"
-
-        android:layout_width="289dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="256dp"
-        android:autoText="true"
-        android:text="@string/no_hay_productos_publicados"
-        android:textSize="24sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Titulo" />
-
     <Button
         android:id="@+id/btnOrderTracking"
         android:layout_width="254dp"
         android:layout_height="71dp"
-        android:layout_marginTop="18dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
         android:backgroundTintMode="src_over"
@@ -79,8 +67,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NoTienesProductos"
-        app:layout_constraintVertical_bias="0.603"
         app:layout_constraintWidth_percent="0.9" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="336dp"
+        android:layout_height="58dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/icono_busqueda"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="@string/search_icon"
+            app:layout_constraintEnd_toStartOf="@+id/entrada_busqueda"
+            app:layout_constraintTop_toBottomOf="@+id/Titulo"
+            app:srcCompat="@drawable/baseline_search_24" />
+
+        <EditText
+            android:id="@+id/entrada_busqueda"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="Buscar producto"
+            android:background="@android:color/transparent"
+            android:hint="@string/search_hint"
+            android:inputType="text"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.703"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Titulo" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/productos"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
