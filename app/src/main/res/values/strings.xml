@@ -1,3 +1,63 @@
 <resources>
     <string name="app_name">tiendavirtualuco</string>
+
+    <string name="_1_9998887776_ninfo_tradly_co">+1 9998887776\ninfo@tradly.co</string>
+    <string name="trazabilidad">Trazabilidad</string>
+    <string name="imagen_soporte">Imagen soporte</string>
+    <string name="id">Id:</string>
+    <string name="producto">Producto:</string>
+    <string name="detalle">Detalle</string>
+    <string name="id_producto">Id producto: </string>
+    <string name="imagen_del_equipo_tecnico">Imagen del equipo tecnico</string>
+
+    <string name="informacion_equipo">Equipo de trazabilidad\n+1 9998887776\ninfo@tradly.co</string>
+    <string name="informacion_equipo_android_textalignment">informacion_equipo android:textAlignment=</string>
+    <string name="seguimiento_de_pedido">Seguimiento de Pedido</string>
+    <string name="nombre_producto">Nombre producto</string>
+    <string name="imagen_del_equipo_t_cnico">Imagen del equipo técnico</string>
+    <string name="fecha_despacho">Fecha Despacho:</string>
+    <string name="vendedor">Vendedor:</string>
+    <string name="comprador">Comprador:</string>
+    <string name="detalle_comprador">Detalle Comprador</string>
+    <string name="nombre">Nombre: </string>
+    <string name="celular">Celular: </string>
+    <string name="correo_electronico">Correo Electronico: </string>
+    <string name="fecha_creacion">Fecha de creacion de cuenta: </string>
+    <string name="volver">Volver</string>
+    <string name="detalle_vendedor">Detalle Vendedor</string>
+    <string name="egresos">Egresos: </string>
+    <string name="compradores">Compradores</string>
+    <string name="vendedores">Vendedores</string>
+    <string name="listado_vendedores">Listado de Vendedores</string>
+    <string name="listado_compradores">Listado de Compradores</string>
+
+    <string name="bitcoin_vector">Bitcoin vector</string>
+    <string name="cart_vector">Cart Vector</string>
+    <string name="buscar">Buscar</string>
+    <string name="search_hint">Buscar producto</string>
+    <string name="productos_title">Productos</string>
+    <string name="search_icon">Search icon</string>
+    <string name="icono_de_venta">Icono de venta</string>
+    <string name="icono_de_carrito">Icono de carrito</string>
+    <string name="mis_compras">Mis compras</string>
+    <string name="icono_compras">Icono compras</string>
+    <string name="icono_busqueda">Icono busqueda</string>
+    <string name="ofertas">Ofertas\n</string>
+    <string name="favoritos">Mis Favoritos</string>
+    <string name="historial_compras">Historial compras</string>
+    <string name="mis_productos">Mis productos</string>
+    <string name="icono_de_favoritos">Icono de favoritos</string>
+    <string name="icono_de_historal_de_compras">Icono de historal de compras</string>
+    <string name="icono_de_mis_productos">Icono de mis productos</string>
+    <string name="imagen_del_producto">Imagen del producto</string>
+    <string name="icono_de_me_gusta">Icono de me gusta</string>
+    <string name="icono_de_agregar">icono de agregar</string>
+    <string name="icono_tienda">Icono de la tienda</string>
+    <string name="imagen_producto_favorito">Imagen Producto Favorito</string>
+
+    <!-- Botones  -->
+    <string name="boton_eliminar">Eliminar</string>
+    <string name="boton_visitar">Visitar</string>
+    <string name="boton_comprar">Comprar</string>
+    <string name="boton_agregar_carrito">Agregar al carrito</string>
 </resources>
