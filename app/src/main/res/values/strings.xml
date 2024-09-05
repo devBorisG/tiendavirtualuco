@@ -67,4 +67,15 @@
     <string name="categorias">Categoria</string>
     <string name="max_4_fotos_del_producto">Max. 4 fotos del producto</string>
     <string name="Devolver">devolver</string>
+    <string name="_1_9998887776_ninfo_tradly_co">+1 9998887776\ninfo@tradly.co</string>
+    <string name="trazabilidad">Trazabilidad</string>
+    <string name="imagen_soporte">Imagen soporte</string>
+    <string name="icono_tienda">Icono de la tienda</string>
+    <string name="imagen_producto_favorito">Imagen Producto Favorito</string>
+    <!-- Botones  -->
+    <string name="boton_eliminar">Eliminar</string>
+    <string name="boton_visitar">Visitar</string>
+    <string name="boton_comprar">Comprar</string>
+    <string name="boton_agregar_carrito">Agregar al carrito</string>
+
 </resources>
