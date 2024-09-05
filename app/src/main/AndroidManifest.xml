@@ -26,5 +26,5 @@
         </activity>
         <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
     </application>
-
+s
 </manifest>
