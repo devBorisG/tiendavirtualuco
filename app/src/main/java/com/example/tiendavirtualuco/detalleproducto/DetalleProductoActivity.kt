@@ -1,13 +1,13 @@
-package com.example.tiendavirtualuco
+package com.example.tiendavirtualuco.detalleproducto
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tiendavirtualuco.R
 
-class MainActivity : AppCompatActivity() {
+class DetalleProductoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.trazabilidad_principal)
+        setContentView(R.layout.detalle_producto)
     }
 }

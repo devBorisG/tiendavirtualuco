@@ -10,11 +10,11 @@ class PieView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private lateinit var imgCompras: ImageView
-    private lateinit var imgOfertas: ImageView
-    private lateinit var imgProductos: ImageView
-    private lateinit var imgHistoricoProductos: ImageView
-    private lateinit var imgFavoritos: ImageView
+    private var imgCompras: ImageView
+    private var imgOfertas: ImageView
+    private var imgProductos: ImageView
+    private var imgHistoricoProductos: ImageView
+    private var imgFavoritos: ImageView
 
     init {
         inflate(context, R.layout.pie_layout,this)
@@ -24,5 +24,4 @@ class PieView @JvmOverloads constructor(
         imgHistoricoProductos = findViewById<ImageButton>(R.id.ic_purchase_history)
         imgFavoritos = findViewById<ImageButton>(R.id.ic_favorites)
     }
-
 }
