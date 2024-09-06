@@ -18,10 +18,10 @@ class PieView @JvmOverloads constructor(
 
     init {
         inflate(context, R.layout.pie_layout,this)
-        imgCompras = findViewById<ImageButton>(R.id.ic_purchase)
-        imgOfertas = findViewById<ImageButton>(R.id.ic_search_offers)
-        imgProductos = findViewById<ImageButton>(R.id.ic_my_products)
-        imgHistoricoProductos = findViewById<ImageButton>(R.id.ic_purchase_history)
-        imgFavoritos = findViewById<ImageButton>(R.id.ic_favorites)
+        imgCompras = findViewById<ImageButton>(R.id.icCompra)
+        imgOfertas = findViewById<ImageButton>(R.id.icBuscarOfertas)
+        imgProductos = findViewById<ImageButton>(R.id.icMisProductos)
+        imgHistoricoProductos = findViewById<ImageButton>(R.id.icHistorialCompra)
+        imgFavoritos = findViewById<ImageButton>(R.id.icFavoritos)
     }
 }

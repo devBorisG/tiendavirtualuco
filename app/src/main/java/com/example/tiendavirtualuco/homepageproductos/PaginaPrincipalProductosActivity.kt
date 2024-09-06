@@ -1,15 +1,12 @@
 package com.example.tiendavirtualuco.homepageproductos
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiendavirtualuco.R
-import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
 import com.example.tiendavirtualuco.homepageproductos.service.command.CommandsViewsEnum
 import com.example.tiendavirtualuco.homepageproductos.service.command.settings.CommandFactory
 import com.example.tiendavirtualuco.homepageproductos.service.command.settings.CommandManager
-import com.example.tiendavirtualuco.homepageproductos.service.observe.CommandObserver
 import com.example.tiendavirtualuco.homepageproductos.service.observe.implementation.LoggingCommandObserver
 
 class PaginaPrincipalProductosActivity : AppCompatActivity() {
@@ -31,7 +28,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
 
     private fun initIcons() {
         val iconCommandMap = mapOf(
-            R.id.ic_favorites to CommandsViewsEnum.OPEN_FAVORITES
+            R.id.icFavoritos to CommandsViewsEnum.OPEN_FAVORITES
             // TODO: Add more icons and their corresponding commands here
         )
 
