@@ -5,50 +5,49 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".SellerRating">
 
     <ImageView
         android:id="@+id/sellerImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="Seller Image"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
+        android:contentDescription="Seller Image"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
 
     <TextView
+        android:id="@+id/reviewUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/reviewUsername"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
         android:text="Seller Name"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
 
-    <TextView
-        android:id="@+id/averageRating"
+    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4.5"
-        android:textSize="20sp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/averageRating"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.456" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
