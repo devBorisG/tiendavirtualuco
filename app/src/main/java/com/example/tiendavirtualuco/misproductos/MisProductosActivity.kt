@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.misproductos.adapter.AdaptadorMisProductos
+import android.widget.Button;
 
 
 class MisProductosActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class MisProductosActivity : AppCompatActivity() {
         initRecyclerView()
 
     }
+    
     private fun initRecyclerView(){
         val recyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recycler_productos)//falta cMBIr el id
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
