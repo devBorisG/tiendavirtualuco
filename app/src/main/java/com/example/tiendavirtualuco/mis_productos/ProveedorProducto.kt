@@ -1,4 +1,4 @@
-package com.example.tiendavirtualuco.homepageproductos
+package com.example.tiendavirtualuco.mis_productos
 
 class ProveedorProducto {
     companion object

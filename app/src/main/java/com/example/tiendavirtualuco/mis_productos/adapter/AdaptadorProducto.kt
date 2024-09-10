@@ -1,10 +1,10 @@
-package com.example.tiendavirtualuco.homepageproductos.adapter
+package com.example.tiendavirtualuco.mis_productos.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
-import com.example.tiendavirtualuco.homepageproductos.ModeloProducto
+import com.example.tiendavirtualuco.mis_productos.ModeloProducto
 
 class AdaptadorProducto(private val listaProducto:List<ModeloProducto>) : RecyclerView.Adapter<VistaProducto>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VistaProducto {
