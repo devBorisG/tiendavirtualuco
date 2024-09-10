@@ -3,7 +3,6 @@ package com.example.tiendavirtualuco.homepageproductos
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiendavirtualuco.R
-import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
 import com.example.tiendavirtualuco.homepageproductos.service.command.CommandsViewsEnum
 import com.example.tiendavirtualuco.homepageproductos.service.command.settings.CommandFactory
