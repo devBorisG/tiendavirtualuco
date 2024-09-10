@@ -28,13 +28,14 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
 
     private fun initIcons() {
         val iconCommandMap = mapOf(
-            R.id.icFavoritos to CommandsViewsEnum.OPEN_FAVORITES
+            R.id.ic_favorites to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java)
             // TODO: Add more icons and their corresponding commands here
         )
 
-        for ((iconId, commandType) in iconCommandMap) {
+        for ((iconId, commnandInfo) in iconCommandMap) {
+            val (commandType, destination) = commnandInfo
             val icon = findViewById<android.widget.ImageView>(iconId)
-            val command = CommandFactory.createCommand(commandType, this)
+            val command = CommandFactory.createCommand(commandType, this, destination)
             CommandManager.registerCommand(command, commandType)
             icon.setOnClickListener {
                 CommandManager.executeCommand(commandType)
