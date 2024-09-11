@@ -6,8 +6,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.tiendavirtualuco.sellerRating.Seller
 
 class SellerRating : AppCompatActivity() {
+    val seller = listOf(
+        Seller("BJCastro", "Septiembre 20", 3, "me gusta mucho")
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
