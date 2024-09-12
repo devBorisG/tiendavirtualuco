@@ -20,7 +20,7 @@
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
         <activity
-            android:name=".mis_productos.service.AñadirProductoActivity"
+            android:name=".mis_productos.AñadirProductoActivity"
             android:exported="false" />
         <activity
             android:name=".misproductos.MisProductosActivity"

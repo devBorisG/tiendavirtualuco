@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button;
-import com.example.tiendavirtualuco.mis_productos.service.AñadirProductoActivity
+import com.example.tiendavirtualuco.mis_productos.AñadirProductoActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.mis_productos_vacio)
         configBotonAtras()
+
     }
+
 
     fun configBotonAtras(){
         val btnBack = findViewById<Button>(R.id.btnAñadirProductoDesdeVacio)
@@ -25,5 +27,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.tiendavirtualuco.mis_productos.service
+package com.example.tiendavirtualuco.mis_productos
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import com.example.tiendavirtualuco.MainActivity
 import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.mis_productos.MisProductosActivity
 
-class AñadirProductoActivity : AppCompatActivity() {
+class EditarProductoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class AñadirProductoActivity : AppCompatActivity() {
     fun configBotonAtras() {
         val btnBack = findViewById<Button>(R.id.BtDevolverAñadirProducto)
         btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MisProductosActivity::class.java)
             startActivity(intent)
         }
     }

@@ -49,7 +49,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btnOrderTracking"
+        android:id="@+id/BtAñadirProductoMisProductos"
         android:layout_width="254dp"
         android:layout_height="71dp"
 
