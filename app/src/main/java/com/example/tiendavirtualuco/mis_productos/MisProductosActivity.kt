@@ -9,7 +9,7 @@ import com.example.tiendavirtualuco.mis_productos.service.command.settings.Comma
 import com.example.tiendavirtualuco.mis_productos.service.command.settings.CommandManager
 import com.example.tiendavirtualuco.mis_productos.service.observe.implementation.LoggingCommandObserver
 
-class PaginaPrincipalProductosActivity : AppCompatActivity() {
+class MisProductosActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +17,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
         setContentView(R.layout.pagina_principal_productos)
         CommandManager.addObserver(LoggingCommandObserver())
         initRecyclerView()
-        initIcons()
+        //initIcons()
     }
 
     private fun initRecyclerView(){
@@ -25,7 +25,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
         recyclerView.adapter = AdaptadorProducto(ProveedorProducto.listaProductos)
     }
-
+    /*
     private fun initIcons() {
         val iconCommandMap = mapOf(
             R.id.ic_favorites to CommandsViewsEnum.OPEN_FAVORITES
@@ -41,4 +41,6 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
             }
         }
     }
+
+     */
 }

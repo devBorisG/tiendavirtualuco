@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.tiendavirtualuco.R
-import com.example.tiendavirtualuco.mis_productos.PaginaPrincipalProductosActivity
+import com.example.tiendavirtualuco.mis_productos.MisProductosActivity
 
 class DetalleProductoActivity : AppCompatActivity() {
 
@@ -29,7 +29,7 @@ class DetalleProductoActivity : AppCompatActivity() {
     fun configBotonAtras(){
         val btnBack = findViewById<ImageView>(R.id.btnAtras)
         btnBack.setOnClickListener {
-            val intent = Intent(this, PaginaPrincipalProductosActivity::class.java)
+            val intent = Intent(this, MisProductosActivity::class.java)
             startActivity(intent)
         }
     }
