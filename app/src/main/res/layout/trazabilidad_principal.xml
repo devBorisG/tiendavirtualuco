@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -47,7 +47,8 @@
             android:id="@+id/tvInfoTeam"
             android:layout_width="205dp"
             android:layout_height="60dp"
-            android:text="@string/informacion_equipo"           android:textAlignment="center"
+            android:text="@string/informacion_equipo"
+            android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:layout_marginStart="20dp"
@@ -85,19 +86,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvId" />
 
-    <Button
-        android:id="@+id/btnProductDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+    <!-- <Button
+         android:id="@+id/btnProductDetail"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginEnd="8dp"
 
-        android:backgroundTint="#91C56E"
-        android:text="@string/detalle"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvProduct"
-        />
+         android:backgroundTint="#91C56E"
+         android:text="@string/detalle"
+         android:textColor="@android:color/white"
+         android:textSize="16sp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="@+id/tvProduct"
+         />-->
 
     <TextView
         android:id="@+id/tvSeller"
@@ -172,7 +173,45 @@
         app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDispatchDate"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <Button
+        android:id="@+id/BtnListadoUsuarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#91C56E"
+        android:text="@string/listado_de_usuarios"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrderTracking"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <Button
+        android:id="@+id/BtnTrazabilidadProductos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#91C56E"
+        android:text="@string/trazabilidad_productos"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnListadoUsuarios"
+        app:layout_constraintVertical_bias="0.05"
         app:layout_constraintWidth_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
