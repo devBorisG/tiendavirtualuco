@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--
+    Allows Glide to monitor connectivity status and restart failed requests if users go from a
+    a disconnected to a connected network state.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
+        <activity android:name=".favoritos.MisFavoritosActivity" />
+        <activity android:name=".detalleproducto.DetalleProductoActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -27,9 +35,7 @@
             android:exported="true">
         </activity>
 
+        <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
     </application>
-
-
-
 
 </manifest>
