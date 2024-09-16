@@ -1,7 +1,5 @@
 package com.example.tiendavirtualuco.trazabilidad.fragmentos
 
-
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,14 +8,14 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.tiendavirtualuco.R
 
-class DetalleComprador : Fragment() {
+class DetalleProducto : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflar el layout para este fragmento
-        return inflater.inflate(R.layout.detalle_comprador_trazabilidad, container, false)
+        return inflater.inflate(R.layout.detalle_producto_trazabilidad, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
