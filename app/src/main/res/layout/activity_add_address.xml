@@ -1,18 +1,16 @@
-¿'<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f3f4f9"
-    tools:context=".CartActivity">
+    tools:context=".activities.CartActivity">
 
     <!-- Barra superior con el título -->
-
-    <!-- ScrollView para contenido desplazable -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:background="#33907C"
         android:orientation="vertical"
         android:padding="16dp">
@@ -25,7 +23,6 @@
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <ScrollView
@@ -40,22 +37,20 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Sección para usar direccion actual -->
+            <!-- Sección para usar dirección actual -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@FFFFFF"
+                android:background="@android:color/white"
                 android:gravity="center"
                 android:padding="12dp"
                 android:text="📍Usar ubicación actual"
                 android:textColor="#33907C"
                 android:textSize="16sp" />
 
-
-
-            <!-- Sección de detalles de la direccion -->
+            <!-- Sección de detalles de la dirección -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="501dp"
@@ -108,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
                     android:hint="Código Postal"
-                    android:inputType="textPostalCode" />
+                    android:inputType="text" />
 
             </LinearLayout>
         </LinearLayout>
@@ -116,6 +111,7 @@
 
     <!-- Botón de Encargar y Pagar -->
     <Button
+        android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -123,5 +119,4 @@
         android:backgroundTint="#33907C"
         android:text="Guardar"
         android:textColor="@android:color/white" />
-
 </LinearLayout>
