@@ -4,8 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_marginBottom="16dp"
     android:gravity="center_horizontal"
-    android:background="@android:color/white"> <!-- Fondo blanco para mejor contraste -->
+    android:background="#D3CBCB"> <!-- Fondo blanco para mejor contraste -->
 
     <TextView
         android:id="@+id/report_code_label"
@@ -106,10 +107,10 @@
 
     <ImageView
         android:id="@+id/report_image"
-        android:layout_width="wrap_content"
+        android:layout_width="284dp"
         android:layout_height="200dp"
-        android:layout_marginBottom="12dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
         android:src="@drawable/ic_arrow_down" /> <!-- Placeholder para la imagen del producto -->
 
     <TextView

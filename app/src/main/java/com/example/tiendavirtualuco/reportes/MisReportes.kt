@@ -1,12 +1,12 @@
 package com.example.tiendavirtualuco.reportes
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.TextView
+
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
@@ -29,9 +29,9 @@ class MisReportes : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val reports = listOf(
-            Report("230450230207483", "Completada", "15 de agosto de 2024 - 10:00", "Método de reporte: Entrega a domicilio", "220197701", "Apple iPhone 14 Pro 256 GB", "$5.000.000"),
-            Report("230450230207484", "Pendiente", "1 de septiembre de 2024 - 12:45", "Método de reporte: Retiro en tienda", "220197702", "Samsung Galaxy S22 Ultra 128 GB", "$4.200.000"),
-            Report("230450230207482", "Anulada", "30 de julio de 2024 - 15:32", "Método de reporte: Entrega de producto en sucursal de Servientrega", "220197700", "Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB", "$1.503.900")
+            Report("230450230207483", "Completada", "15 de agosto de 2024 - 10:00", "Método de reporte: Entrega a domicilio", "220197701", "Apple iPhone 14 Pro 256 GB", "$5.000.000",R.drawable.baseline_home_24),
+            Report("230450230207484", "Pendiente", "1 de septiembre de 2024 - 12:45", "Método de reporte: Retiro en tienda", "220197702", "Samsung Galaxy S22 Ultra 128 GB", "$4.200.000",R.drawable.baseline_add_circle_outline_24),
+            Report("230450230207482", "Anulada", "30 de julio de 2024 - 15:32", "Método de reporte: Entrega de producto en sucursal de Servientrega", "220197700", "Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB", "$1.503.900",R.drawable.baseline_shopping_bag_24)
         )
         recyclerView.adapter = ReporteAdapter(reports)
         // Inicializar componentes

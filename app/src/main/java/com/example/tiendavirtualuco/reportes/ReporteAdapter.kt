@@ -34,7 +34,7 @@ class ReporteAdapter(private val reportList: List<Report>) : RecyclerView.Adapte
         holder.reportDate.text = report.date
         holder.reportMethod.text = report.method
         holder.reportTracking.text = report.tracking
-        holder.reportImage.setImageResource(R.drawable.ic_launcher_background) // Cambia esto según tu imagen
+        holder.reportImage.setImageResource(report.imageResId) // Cambia esto según tu imagen
         holder.reportProduct.text = report.product
         holder.reportPrice.text = report.price
     }

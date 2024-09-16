@@ -6,4 +6,6 @@ data class Report(val code: String,
                   val method: String,
                   val tracking: String,
                   val product: String,
-                  val price: String)
+                  val price: String,
+                  val imageResId: Int
+)
