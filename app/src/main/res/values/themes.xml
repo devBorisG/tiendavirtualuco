@@ -5,6 +5,7 @@
         <item name="android:navigationBarColor">#FFFFFF</item>
         <item name="android:statusBarColor">#FFFFFF</item>
         <item name="android:windowLightStatusBar">true</item> <!-- Hace que los íconos sean oscuros -->
+        <item name="android:windowLightNavigationBar">true</item> <!-- Hace que los íconos sean oscuros -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 

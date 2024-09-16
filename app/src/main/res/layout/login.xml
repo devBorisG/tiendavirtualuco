@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:text="Tienda Virtual UCO"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/ingresaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:text="Ingresa en tu cuenta :"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/montserrat_semibold"
+        android:hint="Correo Electronico"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/montserrat_semibold"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_iniciar_sesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@android:color/white"
+        android:padding="16dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Iniciar Sesion"
+        android:textColor="#358f75" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="292dp"
+        android:layout_height="79dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-2dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="¿No tienes una cuenta? Registrate"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+</LinearLayout>
