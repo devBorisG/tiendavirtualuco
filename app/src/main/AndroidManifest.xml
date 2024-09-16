@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
+
+        <activity
+            android:name=".reportes.MisReportes"
+            android:exported="true"
+            />
+
         <activity android:name=".favoritos.MisFavoritosActivity" />
         <activity android:name=".detalleproducto.DetalleProductoActivity" />
         <activity

@@ -60,4 +60,18 @@
     <string name="boton_visitar">Visitar</string>
     <string name="boton_comprar">Comprar</string>
     <string name="boton_agregar_carrito">Agregar al carrito</string>
+
+
+
+        <string name="spinner_prompt">Elija una opción</string>
+        <string-array name="report_reasons">
+            <item>No me gustó el producto</item>
+            <item>Muy pequeño</item>
+            <item>No me llegó el producto solicitado</item>
+            <item>No era lo que esperaba, llegó con defecto</item>
+            <item>Hice pago de producto y no llegó</item>
+            <item>El producto no llegó a su destino</item>
+            <item>Presentó diferencia con el material</item>
+        </string-array>
+
 </resources>
