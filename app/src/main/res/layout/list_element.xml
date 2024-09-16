@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"> <!-- Centra horizontalmente todo el contenido -->
+
+    <TextView
+        android:id="@+id/report_code_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CÓDIGO DE REPORTE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <TextView
+        android:id="@+id/report_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="230450230207482"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <TextView
+        android:id="@+id/report_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anulada"
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <TextView
+        android:id="@+id/report_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 de julio de 2024 - 15:32"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <TextView
+        android:id="@+id/report_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Método de reporte: Entrega de producto en sucursal de Servientrega"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <TextView
+        android:id="@+id/report_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número de tracking: 220197700"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <ImageView
+        android:id="@+id/report_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="12dp"
+        android:layout_gravity="center" /> <!-- Centra la imagen horizontalmente -->
+
+    <TextView
+        android:id="@+id/report_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+
+    <TextView
+        android:id="@+id/report_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$1.503.900"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+</LinearLayout>

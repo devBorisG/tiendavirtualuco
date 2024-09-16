@@ -13,6 +13,9 @@ import android.widget.*
 import com.example.tiendavirtualuco.R
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
 class MisReportes : AppCompatActivity() {
     private var Elijaunaopcion: Spinner? = null
     private var detalleReporte: EditText? = null
@@ -22,6 +25,13 @@ class MisReportes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.reporte)
 
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val reports = listOf(
+            Report("230450230207482", "Anulada", "30 de julio de 2024 - 15:32", "Método de reporte: Entrega de producto en sucursal de Servientrega", "220197700", "Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB", "$1.503.900")
+        )
+        recyclerView.adapter = ReporteAdapter(reports)
         // Inicializar componentes
         Elijaunaopcion = findViewById(R.id.Elijaunaopcion)
         detalleReporte = findViewById(R.id.editTextText)
