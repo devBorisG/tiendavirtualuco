@@ -3,6 +3,7 @@ package com.example.tiendavirtualuco.homepageproductos
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiendavirtualuco.R
+import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
 import com.example.tiendavirtualuco.homepageproductos.service.command.CommandsViewsEnum
 import com.example.tiendavirtualuco.homepageproductos.service.command.settings.CommandFactory
@@ -28,7 +29,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
 
     private fun initIcons() {
         val iconCommandMap = mapOf(
-            R.id.ic_favorites to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java)
+            R.id.icFavoritos to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java)
             // TODO: Add more icons and their corresponding commands here
         )
 
