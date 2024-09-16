@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SellerRating">
-    <!--android:background="#fffff"-->
+    tools:context=".sellerRating.SellerRating"
+    android:backgroundTint="@color/primary_color">
 
     <ImageView
         android:id="@+id/sellerImage"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:text="Seller Name"
+        android:text="BJCastro"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:text="Seller Number"
+        android:text="+3 230457809"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,43 +66,47 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintHorizontal_bias="0.678"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <RatingBar
         android:id="@+id/averageRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:isIndicator="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reviewList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.804" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <Button
         android:id="@+id/writeReviewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary_color"
         android:text="Write a Review"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.907" />
+
+    <LinearLayout
+        android:id="@+id/commentContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/averageRating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/writeReviewButton"
+        android:padding="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
