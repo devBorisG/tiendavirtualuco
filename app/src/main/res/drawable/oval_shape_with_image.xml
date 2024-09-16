@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Forma ovalada con color de fondo -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#A9A9A9"/> <!-- Color de fondo para la ovalada -->
+            <size android:width="80dp" android:height="80dp"/> <!-- Tamaño de la imagen -->
+        </shape>
+    </item>
+
+    <!-- Imagen de fondo que aparecerá dentro de la forma ovalada -->
+    <item>
+        <bitmap
+            android:src="@drawable/marketplace_image"
+        android:gravity="center" /> <!-- Centra la imagen dentro de la forma -->
+    </item>
+</layer-list>
