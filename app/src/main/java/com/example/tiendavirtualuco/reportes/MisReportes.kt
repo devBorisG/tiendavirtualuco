@@ -29,6 +29,8 @@ class MisReportes : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val reports = listOf(
+            Report("230450230207483", "Completada", "15 de agosto de 2024 - 10:00", "Método de reporte: Entrega a domicilio", "220197701", "Apple iPhone 14 Pro 256 GB", "$5.000.000"),
+            Report("230450230207484", "Pendiente", "1 de septiembre de 2024 - 12:45", "Método de reporte: Retiro en tienda", "220197702", "Samsung Galaxy S22 Ultra 128 GB", "$4.200.000"),
             Report("230450230207482", "Anulada", "30 de julio de 2024 - 15:32", "Método de reporte: Entrega de producto en sucursal de Servientrega", "220197700", "Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB", "$1.503.900")
         )
         recyclerView.adapter = ReporteAdapter(reports)

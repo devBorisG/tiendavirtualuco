@@ -4,88 +4,132 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center_horizontal"> <!-- Centra horizontalmente todo el contenido -->
+    android:gravity="center_horizontal"
+    android:background="@android:color/white"> <!-- Fondo blanco para mejor contraste -->
 
     <TextView
         android:id="@+id/report_code_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CÓDIGO DE REPORTE"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
 
     <TextView
         android:id="@+id/report_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="230450230207482"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_marginBottom="12dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
 
     <TextView
         android:id="@+id/report_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Anulada"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textColor="@android:color/holo_green_dark"
+        android:textStyle="bold"
         android:layout_marginBottom="12dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center" /> <!-- Texto verde y negrita para destacar el estado -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="12dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_search_24" /> <!-- Icono de check -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solicitud"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_storage_24"
+            android:layout_marginStart="16dp" /> <!-- Icono de cancel -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anulada"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
+    </LinearLayout>
 
     <TextView
         android:id="@+id/report_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="30 de julio de 2024 - 15:32"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_marginBottom="12dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
 
     <TextView
         android:id="@+id/report_method"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Método de reporte: Entrega de producto en sucursal de Servientrega"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_marginBottom="12dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
 
     <TextView
         android:id="@+id/report_tracking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Número de tracking: 220197700"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_marginBottom="12dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
 
     <ImageView
         android:id="@+id/report_image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
+        android:layout_height="200dp"
         android:layout_marginBottom="12dp"
-        android:layout_gravity="center" /> <!-- Centra la imagen horizontalmente -->
+        android:layout_gravity="center"
+        android:src="@drawable/ic_arrow_down" /> <!-- Placeholder para la imagen del producto -->
 
     <TextView
         android:id="@+id/report_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_marginBottom="12dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro para mejor legibilidad -->
 
     <TextView
         android:id="@+id/report_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$1.503.900"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"
-        android:gravity="center" /> <!-- Centra el texto dentro del TextView -->
+        android:gravity="center"
+        android:textColor="@android:color/black" /> <!-- Texto negro y negrita para destacar el precio -->
 </LinearLayout>
