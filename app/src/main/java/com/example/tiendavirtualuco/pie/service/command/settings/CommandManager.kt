@@ -1,8 +1,8 @@
-package com.example.tiendavirtualuco.homepageproductos.service.command.settings
+package com.example.tiendavirtualuco.pie.service.command.settings
 
-import com.example.tiendavirtualuco.homepageproductos.service.command.Command
-import com.example.tiendavirtualuco.homepageproductos.service.observe.CommandObserver
-import com.example.tiendavirtualuco.homepageproductos.service.command.CommandsViewsEnum
+import com.example.tiendavirtualuco.pie.service.command.Command
+import com.example.tiendavirtualuco.pie.service.observe.CommandObserver
+import com.example.tiendavirtualuco.pie.service.command.CommandsViewsEnum
 
 object CommandManager {
     private val commands = mutableMapOf<CommandsViewsEnum, Command>()
