@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cabecera_hm_prodcutos"
@@ -12,8 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/primary_color"
-        >
+
+        android:background="@color/primary_color">
 
         <!-- Define guidelines for equal spacing -->
         <androidx.constraintlayout.widget.Guideline
@@ -60,7 +65,7 @@
             android:background="@android:color/transparent"
             android:hint="@string/search_hint"
             android:inputType="text"
-            android:textSize="13sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@+id/fondo_busqueda"
             app:layout_constraintEnd_toEndOf="@+id/fondo_busqueda"
             app:layout_constraintHorizontal_bias="0.833"
@@ -102,7 +107,14 @@
             app:srcCompat="@drawable/baseline_shopping_cart_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.example.tiendavirtualuco.CabeceraView
+        android:id="@+id/cabecera_hm_prodcutos"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#F6F9FF"
@@ -111,7 +123,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contenido  de tu ConstraintLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+      <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_productos"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -124,11 +147,13 @@
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <com.example.tiendavirtualuco.PieView
         android:id="@+id/pie_hm_productos"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -165,7 +190,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4" />
+            app:layout_constraintGuide_begin="165dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
@@ -198,8 +223,7 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/mis_compras"
-            android:textSize="12sp"
-            android:layout_marginTop="0dp"
+            android:textSize="11sp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="parent"
@@ -223,8 +247,7 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/ofertas"
-            android:textSize="12sp"
-            android:layout_marginTop="0dp"
+            android:textSize="11sp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -248,8 +271,7 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/favoritos"
-            android:textSize="12sp"
-            android:layout_marginTop="0dp"
+            android:textSize="11sp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="@id/guideline2"
@@ -273,8 +295,7 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="@string/historial_compras"
-            android:textSize="12sp"
-            android:layout_marginTop="0dp"
+            android:textSize="11sp"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="@id/guideline3"
@@ -297,8 +318,7 @@
             android:id="@+id/titulo_tienda"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:layout_marginTop="0dp"
+            android:textSize="11sp"
             android:text="@string/mis_productos"
             android:fontFamily="@font/montserrat_regular"
             app:layout_constraintTop_toBottomOf="@id/divider"
@@ -307,5 +327,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:gravity="center" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

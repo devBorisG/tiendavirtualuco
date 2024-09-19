@@ -3,7 +3,7 @@ package com.example.tiendavirtualuco.favoritos
 class ProveedorFavorito  {
     companion object
     {
-        val listaFavorito = listOf(
+        val listaFavorito = mutableListOf(
             ModeloFavorito(
                 "Xiaomi Redmi Note 13 Pro+ 5G Dual SIM 512 GB",
                 "$1.200.000",
