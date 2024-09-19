@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiendavirtualuco.R
 
@@ -16,8 +15,7 @@ class SellerRating : AppCompatActivity() {
     private lateinit var commentContainer: LinearLayout
     private lateinit var averageRatingBar: RatingBar
     private val requestCode = 1
-    private val commentsList = mutableListOf<Pair<String, Float>>() // Lista para almacenar comentarios y ratings
-
+    private val commentsList = mutableListOf<Pair<String, Float>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +46,8 @@ class SellerRating : AppCompatActivity() {
     }
 
     private fun updateCommentsUI() {
-        // Limpiar los comentarios anteriores
         commentContainer.removeAllViews()
 
-        // Añadir cada comentario de la lista al layout dinámicamente
         for ((comment, rating) in commentsList) {
             val commentTextView = TextView(this).apply {
                 text = "Comentario: $comment \nCalificación: $rating"
