@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">tiendavirtualuco</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="no_tienes_una_cuenta_registrate">¿No tienes una cuenta? Registrate</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="ingresa_en_tu_cuenta">Ingresa en tu cuenta</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="apellido">Apellido</string>
+    <string name="c_contraseña">Confirmar Contraseña</string>
+    <string name="tipo_documento">Tipo de Documento</string>
+    <string name="numero_documento">Numero de Documento</string>
+    <string name="tipo_usuario">Tipo Usuario</string>
 
     <string name="_1_9998887776_ninfo_tradly_co">+1 9998887776\ninfo@tradly.co</string>
     <string name="trazabilidad">Trazabilidad</string>
@@ -21,7 +32,6 @@
     <string name="detalle_comprador">Detalle Comprador</string>
     <string name="nombre">Nombre: </string>
     <string name="celular">Celular: </string>
-    <string name="correo_electronico">Correo Electronico: </string>
     <string name="fecha_creacion">Fecha de creacion de cuenta: </string>
     <string name="volver">Volver</string>
     <string name="detalle_vendedor">Detalle Vendedor</string>
