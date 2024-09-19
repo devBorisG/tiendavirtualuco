@@ -42,6 +42,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.play.services.analytics.impl)
+
     implementation(libs.recyclerview)
     implementation(libs.glide.v4142)
 

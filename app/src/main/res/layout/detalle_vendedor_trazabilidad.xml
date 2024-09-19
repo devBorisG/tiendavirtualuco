@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
 
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
@@ -20,6 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ivTeamDetails"
         android:layout_width="0dp"
@@ -47,7 +53,8 @@
             android:id="@+id/tvInfoTeam"
             android:layout_width="205dp"
             android:layout_height="60dp"
-            android:text="@string/informacion_equipo"           android:textAlignment="center"
+            android:text="@string/informacion_equipo"
+            android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:layout_marginStart="20dp"
@@ -59,6 +66,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
@@ -68,7 +76,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivTeamDetails"/>
+        app:layout_constraintTop_toBottomOf="@+id/ivTeamDetails" />
+
     <TextView
         android:id="@+id/tvCelular"
         android:layout_width="wrap_content"
@@ -78,7 +87,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+
     <TextView
         android:id="@+id/tvCorreo"
         android:layout_width="wrap_content"
@@ -88,7 +98,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCelular"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvCelular" />
+
     <TextView
         android:id="@+id/tvFecha"
         android:layout_width="wrap_content"
@@ -98,7 +109,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCorreo"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvCorreo" />
+
     <Button
         android:id="@+id/btnOrderTracking"
         android:layout_width="0dp"
