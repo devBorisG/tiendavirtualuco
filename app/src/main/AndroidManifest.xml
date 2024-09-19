@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET" />
     <!--
     Allows Glide to monitor connectivity status and restart failed requests if users go from a
@@ -9,6 +10,8 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+=======
+>>>>>>> parent of e7e5e48 (Merge remote-tracking branch 'refs/remotes/origin/develop' into Ordonez_Login_Register)
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,6 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
+<<<<<<< HEAD
 
         <activity
             android:name=".tienda.TiendaAgregarProductoActivity"
@@ -38,12 +42,13 @@
 
         <activity android:name=".favoritos.MisFavoritosActivity" />
         <activity android:name=".detalleproducto.DetalleProductoActivity" />
+=======
+>>>>>>> parent of e7e5e48 (Merge remote-tracking branch 'refs/remotes/origin/develop' into Ordonez_Login_Register)
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -51,12 +56,15 @@
             android:name=".RegisterActivity"
             android:exported="true">
         </activity>
+<<<<<<< HEAD
 
 
         <activity
             android:name=".TrackingActivity"
             android:exported="true" />
         <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
+=======
+>>>>>>> parent of e7e5e48 (Merge remote-tracking branch 'refs/remotes/origin/develop' into Ordonez_Login_Register)
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@
     <string name="tipo_documento">Tipo de Documento</string>
     <string name="numero_documento">Numero de Documento</string>
     <string name="tipo_usuario">Tipo Usuario</string>
+<<<<<<< HEAD
 
     <string name="_1_9998887776_ninfo_tradly_co">+1 9998887776\ninfo@tradly.co</string>
     <string name="trazabilidad">Trazabilidad</string>
@@ -85,4 +86,6 @@
             <item>Presentó diferencia con el material</item>
         </string-array>
 
+=======
+>>>>>>> parent of e7e5e48 (Merge remote-tracking branch 'refs/remotes/origin/develop' into Ordonez_Login_Register)
 </resources>
