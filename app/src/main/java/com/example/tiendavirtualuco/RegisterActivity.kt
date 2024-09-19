@@ -22,7 +22,6 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
 
-        // Ajustar padding según los insets del sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.register)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -41,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
             // Validar campos antes de continuar
             if (validateFields()) {
                 // Si todos los campos son válidos, navega a MainActivity
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -49,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
         val registerText: TextView = findViewById(R.id.btn_bk_inicio_sesion)
         registerText.setOnClickListener {
             // Navega a RegisterActivity
-            val intent = Intent(    this, MainActivity::class.java)
+            val intent = Intent(    this, LoginActivity::class.java)
             startActivity(intent)
         }
 
