@@ -32,7 +32,6 @@
     <string name="detalle_comprador">Detalle Comprador</string>
     <string name="nombre">Nombre: </string>
     <string name="celular">Celular: </string>
-    <string name="correo_electronico">Correo Electronico: </string>
     <string name="fecha_creacion">Fecha de creacion de cuenta: </string>
     <string name="volver">Volver</string>
     <string name="detalle_vendedor">Detalle Vendedor</string>
