@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_color"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="Tienda Virtual UCO"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/rg_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="@string/usuario"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:padding="12dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:inputType="textPersonName"/>
+
+
+        <EditText
+            android:id="@+id/rg_emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/correo_electronico"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColorHint="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/rg_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/contraseña"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:padding="12dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:inputType="textPassword"/>
+
+
+        <EditText
+            android:id="@+id/rg_celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Celular"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="12dp"
+            android:inputType="number"/>
+
+
+
+        <EditText
+            android:id="@+id/rg_tipo_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/tipo_usuario"
+            android:background="@drawable/rounded_edittext"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="12dp"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/btn_crear_cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Crear Cuenta"
+            android:textColor="#358f75" />
+
+        <Button
+            android:id="@+id/btn_bk_inicio_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="¿Ya tienes una cuenta? Inicia Sesion"
+            android:textColor="#358f75" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
