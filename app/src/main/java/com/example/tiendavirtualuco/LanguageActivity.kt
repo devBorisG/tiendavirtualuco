@@ -24,7 +24,7 @@ class LanguageActivity : AppCompatActivity() {
             val selectedId = languageRadioGroup.checkedRadioButtonId
             if (selectedId == -1) {
 
-                showToast("Please select a language.")
+                showToast("Por favor seleccione un idioma")
                 return@setOnClickListener
             }
 

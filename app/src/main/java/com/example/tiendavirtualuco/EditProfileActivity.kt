@@ -32,7 +32,7 @@ class EditProfileActivity : AppCompatActivity() {
 
             // Validar los campos
             if (firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || password.isEmpty()) {
-                showToast("Por favor, complete todos los campos.")
+                showToast("Por favor, complete todos los campos")
                 return@setOnClickListener
             }
 

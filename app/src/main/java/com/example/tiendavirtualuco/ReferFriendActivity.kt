@@ -25,15 +25,15 @@ class ReferFriendActivity : AppCompatActivity() {
             if (email.isNotEmpty()) {
                 // Verificar si el correo electrónico es válido
                 if (isValidEmail(email)) {
-                    Toast.makeText(this, "Invitation sent to $email", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Invitación enviada a $email", Toast.LENGTH_SHORT).show()
 
                     // Volver a la actividad anterior
                     finish()
                 } else {
-                    Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Por favor introduce una dirección de correo electrónico válida", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Please enter an email address", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor ingrese una dirección de correo electrónico", Toast.LENGTH_SHORT).show()
             }
         }
 

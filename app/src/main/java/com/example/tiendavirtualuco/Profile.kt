@@ -19,7 +19,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {
+class Profile : AppCompatActivity() {
 
     private lateinit var imgUser: ImageView
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.profile)
 
         // Configura la Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setMessage("Estás seguro de que deseas cerrar sesión?")
             .setCancelable(false)
-            .setPositiveButton("Yes") { dialog, _ ->
+            .setPositiveButton("Si") { dialog, _ ->
                 dialog.dismiss()
                 finish() // Cierra la actividad actual
             }
