@@ -45,7 +45,7 @@
 =======
 >>>>>>> parent of e7e5e48 (Merge remote-tracking branch 'refs/remotes/origin/develop' into Ordonez_Login_Register)
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,6 +53,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".RegisterActivity"
             android:exported="true">
         </activity>
@@ -60,6 +61,8 @@
 
 
         <activity
+=======
+>>>>>>> parent of a43c91b (Merge pull request #32 from juanpanore/Ordonez_Login_Register)
             android:name=".TrackingActivity"
             android:exported="true" />
         <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
