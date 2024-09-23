@@ -2,33 +2,37 @@ package com.example.tiendavirtualuco.sellerRating
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.RatingBar
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
 
 class SellerRating : AppCompatActivity() {
 
-    private lateinit var commentContainer: LinearLayout
+    private lateinit var commentRecyclerView: RecyclerView
     private lateinit var averageRatingBar: RatingBar
-    private val requestCode = 1
+    private lateinit var commentAdapter: CommentAdapter
     private val commentsList = mutableListOf<Pair<String, Float>>()
+    private val requestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seller_rating)
-        commentContainer = findViewById(R.id.commentContainer)
+
+        commentRecyclerView = findViewById(R.id.commentRecyclerView)
         averageRatingBar = findViewById(R.id.averageRating)
+
+        commentAdapter = CommentAdapter(commentsList)
+        commentRecyclerView.layoutManager = LinearLayoutManager(this)
+        commentRecyclerView.adapter = commentAdapter
 
         val writeReviewButton = findViewById<Button>(R.id.writeReviewButton)
         writeReviewButton.setOnClickListener {
             val intent = Intent(this, Review_seller::class.java)
             startActivityForResult(intent, requestCode)
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -39,27 +43,9 @@ class SellerRating : AppCompatActivity() {
 
             if (comment != null && rating != null) {
                 commentsList.add(Pair(comment, rating))
-                updateCommentsUI()
+                commentAdapter.notifyDataSetChanged()  // Actualiza el RecyclerView
                 updateAverageRating()
             }
-        }
-    }
-
-    private fun updateCommentsUI() {
-        commentContainer.removeAllViews()
-
-        for ((comment, rating) in commentsList) {
-            val commentTextView = TextView(this).apply {
-                text = "Comentario: $comment \nCalificación: $rating"
-                layoutParams = LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-                ).apply {
-                    setMargins(0, 16, 0, 16)
-                }
-                textSize = 16f
-            }
-            commentContainer.addView(commentTextView)
         }
     }
 
@@ -69,10 +55,5 @@ class SellerRating : AppCompatActivity() {
             val averageRating = totalRating / commentsList.size
             averageRatingBar.rating = averageRating.toFloat()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        updateCommentsUI()
     }
 }
