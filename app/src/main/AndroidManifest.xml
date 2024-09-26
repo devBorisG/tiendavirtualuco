@@ -2,12 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
     <!--
     Allows Glide to monitor connectivity status and restart failed requests if users go from a
     a disconnected to a connected network state.
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,11 @@
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
 
+
         <!-- Actividad principal que se inicia al lanzar la aplicación -->
+
+
+
         <activity
 
             android:name=".tienda.TiendaAgregarProductoActivity"
@@ -31,8 +37,16 @@
         <activity
             android:name=".tienda.MainTiendaActivity"
             android:exported="true" />
+
+
+        <activity
+            android:name=".reportes.MisReportes"
+            android:exported="true"
+            />
+
         <activity android:name=".favoritos.MisFavoritosActivity" />
         <activity android:name=".detalleproducto.DetalleProductoActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -41,6 +55,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <!-- Actividad para añadir una nueva dirección -->
         <activity
@@ -58,7 +73,22 @@
             android:exported="true" />
 
 
+
+        <activity android:name=".MainActivityBuzonNotif"
+        android:exported="true"/>
+        <activity android:name=".DetalleNotificacionActivity"
+            android:exported="true"/>
+
         <activity
+
+            android:name=".RegisterActivity"
+            android:exported="true">
+        </activity>
+
+
+
+        <activity
+
             android:name=".TrackingActivity"
             android:exported="true" />
         <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
