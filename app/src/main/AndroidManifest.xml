@@ -39,6 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivityBuzonNotif"
+        android:exported="true"/>
+        <activity android:name=".DetalleNotificacionActivity"
+            android:exported="true"/>
         <activity
             android:name=".TrackingActivity"
             android:exported="true" />
