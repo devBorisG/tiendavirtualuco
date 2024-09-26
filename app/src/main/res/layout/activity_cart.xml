@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f3f4f9"
+    tools:context=".activities.CartActivity">
+
+    <!-- Barra superior con el título -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#33907C"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Carrito"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ScrollView para contenido desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp">
+
+            <!-- Sección para añadir nueva dirección -->
+            <TextView
+                android:id="@+id/addAddressTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="+ Añadir nueva dirección"
+                android:textColor="#33907C"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@android:color/white"
+                android:padding="12dp"/>
+
+            <!-- RecyclerView para los productos del carrito -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+
+
+
+            <!-- Incluye el archivo de detalles del precio -->
+            <include
+                layout="@layout/price_details" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón de Encargar y Pagar -->
+    <Button
+        android:id="@+id/proceedToPaymentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#33907C"
+        android:text="Encargar y Pagar"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
