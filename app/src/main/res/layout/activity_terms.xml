@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".perfil.TermsConditionsActivity">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        app:layout_constraintBottom_toTopOf="@id/btn_accept_terms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/tv_terms_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Términos y Condiciones\n\nBienvenido a nuestro Marketplace. Al utilizar nuestra aplicación, usted acepta cumplir con los siguientes términos y condiciones:\n\n1. Los usuarios deben registrarse con información veraz y actualizada.\n2. Todas las transacciones dentro de la aplicación son responsabilidad de los usuarios.\n3. Los productos y servicios ofrecidos deben cumplir con las normativas locales e internacionales.\n4. Está prohibida la venta de productos ilegales o peligrosos.\n5. Nos reservamos el derecho de suspender o eliminar cuentas que violen estos términos.\n6. No nos hacemos responsables de los daños o pérdidas derivadas del uso de la aplicación.\n\nGracias por ser parte de nuestro Marketplace. Al aceptar estos términos, usted confirma haber leído y entendido las condiciones anteriores."
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_accept_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar Términos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
