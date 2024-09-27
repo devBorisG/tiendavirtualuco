@@ -1,4 +1,4 @@
-package com.example.tiendavirtualuco
+package com.example.tiendavirtualuco.perfil
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tiendavirtualuco.R
 import java.util.Locale
 
 class LanguageActivity : AppCompatActivity() {

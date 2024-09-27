@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeedbackActivity"
+    tools:context=".perfil.FeedbackActivity"
     android:background="@color/secondary_color">
 
     <!-- Botón con icono de flecha para regresar -->

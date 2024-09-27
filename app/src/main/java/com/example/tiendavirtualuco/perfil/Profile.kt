@@ -1,4 +1,4 @@
-package com.example.tiendavirtualuco
+package com.example.tiendavirtualuco.perfil
 
 import android.Manifest
 import android.app.Activity
@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.tiendavirtualuco.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Profile : AppCompatActivity() {
@@ -37,7 +38,8 @@ class Profile : AppCompatActivity() {
 
         // Configura BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.selectedItemId = R.id.nav_profile  // Marca el ítem de perfil como seleccionado
+        bottomNavigationView.selectedItemId =
+            R.id.nav_profile  // Marca el ítem de perfil como seleccionado
 
         // Botón para navegar a la pantalla de edición de perfil
         val btnEditProfile = findViewById<Button>(R.id.btn_edit_profile)

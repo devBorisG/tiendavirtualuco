@@ -1,10 +1,11 @@
-package com.example.tiendavirtualuco
+package com.example.tiendavirtualuco.perfil
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tiendavirtualuco.R
 
 class TermsConditionsActivity : AppCompatActivity() {
 

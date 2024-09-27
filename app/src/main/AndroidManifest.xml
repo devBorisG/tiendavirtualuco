@@ -16,7 +16,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".Profile"
+            android:name=".perfil.Profile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +24,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".EditProfileActivity" android:exported="true" />
-        <activity android:name=".LanguageActivity" android:exported="true" />
-        <activity android:name=".FeedbackActivity" android:exported="true" />
-        <activity android:name=".ReferFriendActivity" android:exported="true" />
-        <activity android:name=".TermsConditionsActivity" android:exported="true" />
+        <activity android:name=".perfil.EditProfileActivity" android:exported="true" />
+        <activity android:name=".perfil.LanguageActivity" android:exported="true" />
+        <activity android:name=".perfil.FeedbackActivity" android:exported="true" />
+        <activity android:name=".perfil.ReferFriendActivity" android:exported="true" />
+        <activity android:name=".perfil.TermsConditionsActivity" android:exported="true" />
 
     </application>
 
