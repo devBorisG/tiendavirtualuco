@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#468966"
+        android:textColor="@android:color/white"
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="@string/trazabilidad"
+        android:textSize="24sp"
+        app:layout_constraintWidth_percent="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ivTeamDetails"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#468966"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintWidth_default="spread"
+        app:layout_constraintWidth_percent="1.0">
+
+        <ImageView
+            android:id="@+id/ImageViewTecnical"
+            android:layout_width="93dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/imagen_del_equipo_t_cnico"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvInfoTeam"
+            android:layout_width="205dp"
+            android:layout_height="60dp"
+            android:text="@string/informacion_equipo"           android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/ImageViewTecnical"
+            app:layout_constraintTop_toTopOf="@id/ImageViewTecnical"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id_producto"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTeamDetails" />
+
+    <TextView
+        android:id="@+id/tvProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_producto"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginVertical="-15dp"
+
+        app:layout_constraintStart_toEndOf="@id/tvId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvId" />
+
+    <Button
+        android:id="@+id/btnProductDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+
+        android:backgroundTint="#91C56E"
+        android:text="@string/detalle"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvProduct"
+        />
+
+    <TextView
+        android:id="@+id/tvSeller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vendedor"
+        android:textSize="20sp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProduct" />
+
+    <Button
+        android:id="@+id/btnSellerDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detalle"
+        android:backgroundTint="#91C56E"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSeller"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tvBuyer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comprador"
+        android:textSize="20sp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeller" />
+
+    <Button
+        android:id="@+id/btnBuyerDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detalle"
+        android:backgroundTint="#91C56E"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvBuyer"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tvDispatchDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fecha_despacho"
+        android:textSize="20sp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBuyer" />
+
+    <Button
+        android:id="@+id/btnOrderTracking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#91C56E"
+        android:text="@string/seguimiento_de_pedido"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDispatchDate"
+
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <Button
+        android:id="@+id/BtnListadoUsuarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#91C56E"
+        android:text="@string/listado_de_usuarios"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrderTracking"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <Button
+        android:id="@+id/BtnTrazabilidadProductos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#91C56E"
+        android:text="@string/trazabilidad_productos"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnListadoUsuarios"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintWidth_percent="0.9" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
