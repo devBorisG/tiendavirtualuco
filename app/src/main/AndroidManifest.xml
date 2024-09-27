@@ -9,6 +9,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,17 +20,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
+
+
+        <!-- Actividad principal que se inicia al lanzar la aplicación -->
+
+
+
+        <activity
+
+            android:name=".tienda.TiendaAgregarProductoActivity"
+            android:exported="true" />
         <activity
             android:name=".mis_productos.AñadirProductoActivity"
             android:exported="false" />
         <activity
+            android:name=".tienda.CrearTiendaActivity"
+            android:exported="true" />
+        <activity
             android:name=".misproductos.MisProductosActivity"
             android:exported="false" />
         <activity
+            android:name=".tienda.MainTiendaActivity"
+            android:exported="true" />
+
+
+        <activity
             android:name=".misproductos.adapter.VistaMisProductos"
             android:exported="false" />
+        <activity
+            android:name=".reportes.MisReportes"
+            android:exported="true"
+            />
+
         <activity android:name=".favoritos.MisFavoritosActivity" />
         <activity android:name=".detalleproducto.DetalleProductoActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -40,6 +65,49 @@
             </intent-filter>
         </activity>
         <activity android:name=".mis_productos.MisProductosActivity" />
+
+
+        <!-- Actividad para añadir una nueva dirección -->
+        <activity
+            android:name=".activities.AddAddressActivity"
+            android:exported="true" />
+
+        <!-- Actividad para elegir el método de pago -->
+        <activity
+            android:name=".activities.PaymentMethodActivity"
+            android:exported="true" />
+
+        <!-- Actividad para añadir un nuevo método de pago -->
+        <activity
+            android:name=".activities.AddPaymentMethodActivity"
+            android:exported="true" />
+
+
+
+        <activity android:name=".MainActivityBuzonNotif"
+        android:exported="true"/>
+        <activity android:name=".DetalleNotificacionActivity"
+            android:exported="true"/>
+
+        <activity
+
+            android:name=".RegisterActivity"
+            android:exported="true">
+        </activity>
+
+
+
+        <activity
+
+            android:name=".TrackingActivity"
+            android:exported="true" />
+        <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
+
     </application>
+
+    <!-- Permisos necesarios -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
 </manifest>

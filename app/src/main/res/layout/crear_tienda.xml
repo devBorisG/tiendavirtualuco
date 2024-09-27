@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tienda.CrearTiendaActivity">
+
+    <!-- AppBar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_color"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="My Store"
+        android:titleTextColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="@string/my_tienda"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/createButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Store Image -->
+            <ImageView
+                android:id="@+id/storeImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/baseline_storage_24" />
+
+            <!-- Text for form description -->
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="This information is used to set up your shop"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <!-- Store Name Input -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Store Name"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/storeNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Enter your store name" />
+
+            <!-- Store Web Address Input -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Store Web Address"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/storeWebAddressInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Enter your store web address" />
+
+            <!-- Store Description Input -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Store Description"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/storeDescriptionInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Enter your store description" />
+
+            <!-- Store Type Input -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Store Type"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/storeTypeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Enter your store type" />
+
+            <!-- Address Input -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/addressInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Enter your store address" />
+
+            <!-- Additional inputs can be added here similarly -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Create Button Fixed at the Bottom -->
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_color"
+        android:text="Create"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

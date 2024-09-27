@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f3f4f9"
+    tools:context=".activities.AddPaymentMethodActivity">
+
+    <!-- Barra superior con el título -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#33907C"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Añadir Método de Pago"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Contenido de la actividad en ScrollView para que sea desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/cardNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Número de tarjeta"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/cardHolderEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Nombre del titular"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/expiryDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Fecha de expiración (MM/AA)"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/cvvEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="CVV"
+                android:inputType="numberPassword" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón para guardar el nuevo método de pago -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#33907C"
+        android:text="Guardar"
+        android:textColor="@android:color/white" />
+</LinearLayout>
