@@ -9,6 +9,7 @@
     a disconnected to a connected network state.
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 
     <application
@@ -23,7 +24,12 @@
         tools:targetApi="31">
 
 
+        <!-- Actividad principal que se inicia al lanzar la aplicación -->
+
+
+
         <activity
+
             android:name=".tienda.TiendaAgregarProductoActivity"
             android:exported="true" />
         <activity
@@ -50,10 +56,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- Actividad para añadir una nueva dirección -->
+        <activity
+            android:name=".activities.AddAddressActivity"
+            android:exported="true" />
+
+        <!-- Actividad para elegir el método de pago -->
+        <activity
+            android:name=".activities.PaymentMethodActivity"
+            android:exported="true" />
+
+        <!-- Actividad para añadir un nuevo método de pago -->
+        <activity
+            android:name=".activities.AddPaymentMethodActivity"
+            android:exported="true" />
+
+
+
         <activity android:name=".MainActivityBuzonNotif"
         android:exported="true"/>
         <activity android:name=".DetalleNotificacionActivity"
             android:exported="true"/>
+
         <activity
 
             android:name=".RegisterActivity"
@@ -68,6 +94,26 @@
             android:exported="true" />
         <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity" />
 
+        <activity
+            android:name=".perfil.Profile"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".perfil.EditProfileActivity" android:exported="true" />
+        <activity android:name=".perfil.LanguageActivity" android:exported="true" />
+        <activity android:name=".perfil.FeedbackActivity" android:exported="true" />
+        <activity android:name=".perfil.ReferFriendActivity" android:exported="true" />
+        <activity android:name=".perfil.TermsConditionsActivity" android:exported="true" />
+
     </application>
+
+    <!-- Permisos necesarios -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
 </manifest>
