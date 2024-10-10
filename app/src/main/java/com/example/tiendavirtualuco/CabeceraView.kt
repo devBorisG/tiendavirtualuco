@@ -17,6 +17,7 @@ class CabeceraView @JvmOverloads constructor(
         inflate(context, R.layout.cabecera_layout,this)
         imgBuscar = findViewById(R.id.icBuscar)
         etBuscar = findViewById(R.id.etBuscar)
+        test = 0
     }
 
 }
