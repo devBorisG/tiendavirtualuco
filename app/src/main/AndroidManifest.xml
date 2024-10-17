@@ -28,6 +28,9 @@
         <activity
             android:name=".tienda.MainTiendaActivity"
             android:exported="true" />
+        <activity
+            android:name=".sellerRating.CommentAdapter"
+            android:exported="false" />
         <activity android:name=".favoritos.MisFavoritosActivity" />
         <activity android:name=".detalleproducto.DetalleProductoActivity" />
         <activity
