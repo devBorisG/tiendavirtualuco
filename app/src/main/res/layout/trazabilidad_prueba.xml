@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Título -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
@@ -21,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Detalles del equipo técnico -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ivTeamDetails"
         android:layout_width="0dp"
@@ -48,7 +49,8 @@
             android:id="@+id/tvInfoTeam"
             android:layout_width="205dp"
             android:layout_height="60dp"
-            android:text="@string/informacion_equipo"           android:textAlignment="center"
+            android:text="@string/informacion_equipo"
+            android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:layout_marginStart="20dp"
@@ -58,9 +60,9 @@
             app:layout_constraintStart_toEndOf="@id/ImageViewTecnical"
             app:layout_constraintTop_toTopOf="@id/ImageViewTecnical"
             app:layout_constraintVertical_bias="0.0" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Input -->
     <EditText
         android:id="@+id/etInput"
         android:layout_width="0dp"
@@ -74,6 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivTeamDetails" />
 
+    <!-- Id Producto -->
     <TextView
         android:id="@+id/tvId"
         android:layout_width="wrap_content"
@@ -91,15 +94,25 @@
         android:layout_height="wrap_content"
         android:text="@string/nombre_producto"
         android:textSize="20sp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
-        android:layout_marginVertical="20dp"
-
+        android:layout_marginVertical="-15dp"
         app:layout_constraintStart_toEndOf="@id/tvId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvId" />
 
-
+    <!-- Botones -->
+    <Button
+        android:id="@+id/btnProductDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#91C56E"
+        android:text="@string/detalle"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvProduct" />
 
     <TextView
         android:id="@+id/tvSeller"
@@ -158,6 +171,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBuyer" />
 
+    <!-- Aquí añadimos el FrameLayout para cargar los Fragments -->
+   <!-- <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDispatchDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnOrderTracking"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="1.0" />-->
+
+    <!-- Otros botones -->
     <Button
         android:id="@+id/btnOrderTracking"
         android:layout_width="0dp"

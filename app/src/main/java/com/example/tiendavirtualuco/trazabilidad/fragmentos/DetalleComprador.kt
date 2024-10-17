@@ -23,7 +23,7 @@ class DetalleComprador : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Aquí puedes inicializar tus vistas, por ejemplo:
+
         val btnOrderTracking = view.findViewById<Button>(R.id.btnOrderTracking)
         btnOrderTracking.setOnClickListener {
             // Acciones cuando se hace clic en el botón
