@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp") version "1.9.10-1.0.13"
+    id("androidx.room") version "2.7.0-alpha10"
 }
 
 android {
@@ -35,7 +37,19 @@ android {
     }
 }
 
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
 dependencies {
+    // Dependencia para el compilador de Room
+    ksp(libs.androidx.room.compiler.v270alpha01)
+
+    // Dependencia para el runtime de Room
+    implementation(libs.androidx.room.runtime)
+
+    // Dependencia opcional para SQLite empaquetado
+    implementation(libs.androidx.sqlite.bundled)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
