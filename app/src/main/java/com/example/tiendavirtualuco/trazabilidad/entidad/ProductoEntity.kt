@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "producto")
 
 data class ProductoEntity(
-    @PrimaryKey val code: Int,  // Es un valor constante, por eso usamos 'val'
+ @PrimaryKey val code: Int,  // Es un valor constante, por eso usamos 'val'
 
     @ColumnInfo(name = "nombre") var name: String,  // Se usa 'var' para que Room pueda actualizar el valor
     @ColumnInfo(name = "descripcion") var description: String = "",  // Usamos String en lugar de Int

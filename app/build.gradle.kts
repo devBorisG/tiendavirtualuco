@@ -1,7 +1,6 @@
-plugins {
-    alias(libs.plugins.androidApplication)
+plugins {    alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-}
+    id("com.google.devtools.ksp") version "1.9.10-1.0.13"}
 
 android {
     namespace = "com.example.tiendavirtualuco"
@@ -42,6 +41,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
