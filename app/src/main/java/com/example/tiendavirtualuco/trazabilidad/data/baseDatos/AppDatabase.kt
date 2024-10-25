@@ -35,6 +35,6 @@ abstract class AppDatabase : RoomDatabase() {
         }
     }*/
 
-    abstract fun productDAO(): ProductoDAO
+    //abstract fun productDAO(): ProductoDAO
 
 }

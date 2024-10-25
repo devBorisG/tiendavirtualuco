@@ -1,0 +1,79 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "806edb4dd31f6ddf061a44ede4e200e7",
+    "entities": [
+      {
+        "tableName": "producto",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `cantidad` INTEGER NOT NULL, `precio` REAL NOT NULL, `descripcion` TEXT NOT NULL, `url_imagen` TEXT NOT NULL, `es_oferta` INTEGER NOT NULL, `precio_oferta` REAL NOT NULL, `precio_envio` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cantidad",
+            "columnName": "cantidad",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precio",
+            "columnName": "precio",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descripcion",
+            "columnName": "descripcion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url_imagen",
+            "columnName": "url_imagen",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "es_oferta",
+            "columnName": "es_oferta",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precio_oferta",
+            "columnName": "precio_oferta",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precio_envio",
+            "columnName": "precio_envio",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '806edb4dd31f6ddf061a44ede4e200e7')"
+    ]
+  }
+}
