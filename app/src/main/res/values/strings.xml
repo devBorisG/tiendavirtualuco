@@ -61,4 +61,38 @@
     <string name="boton_visitar">Visitar</string>
     <string name="boton_comprar">Comprar</string>
     <string name="boton_agregar_carrito">Agregar al carrito</string>
+
+
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="no_tienes_una_cuenta_registrate">¿No tienes una cuenta? Registrate</string>
+    <!-- <string name="correo_electronico" tools:ignore="DuplicateDefinition">Correo Electronico</string>-->
+    <string name="ingresa_en_tu_cuenta">Ingresa en tu cuenta</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <!--<string name="apellido" tools:ignore="DuplicateDefinition">Apellido</string>-->
+    <string name="c_contraseña">Confirmar Contraseña</string>
+    <string name="tipo_documento">Tipo de Documento</string>
+    <string name="numero_documento">Numero de Documento</string>
+    <string name="tipo_usuario">Tipo Usuario</string>
+
+
+
+
+    <string name="listado_de_usuarios">Listado de usuarios</string>
+    <string name="tipo_de_usuario">Tipo de Usuario: </string>
+    <string name="numero_de_identificaci_n">Numero de Identificación: </string>
+    <string name="tipo_de_documento">Tipo de documento: </string>
+    <string name="apellido" >Apellidos: </string>
+    <string name="imagen_del_equipo">Imagen del equipo</string>
+    <string name="detalles_producto">Detalles Producto</string>
+    <string name="trazabilidad_productos">Trazabilidad Productos</string>
+    <string name="voltaje_100v_240v_n_tama_o_de_la_pantalla_27_n_pantalla_lcd_de_27_n_resoluci_n_1920x1080px_n_relaci_n_de_aspecto_16_9_n_panel_va_n_250cd_m_n_conexi_n_2_hdmi">• Voltaje: 100V/240V\n• Tamaño de la pantalla: 27\\n• Pantalla LCD de 27\\n• Resolución: 1920x1080px\n• Relación de aspecto 16:9\n• Panel VA\n• 250cd/m²\n• Conexión 2 HDMI</string>
+    <string name="monitor_lg_ultragear_27gq50f_lcd_27">Monitor LG UltraGear 27GQ50F LCD 27\\</string>
+    <string name="_725_000">$725.000</string>
+    <string name="_870_000_20_off">$870.000 20% OFF</string>
+    <string name="visitar">Visitar</string>
+    <string name="jap_store">JAP Store</string>
+    <string name="todo">TODO</string>
+
+
 </resources>
