@@ -1,26 +1,31 @@
 package com.example.tiendavirtualuco.homepageproductos
 
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.AlarmManagerCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.tiendavirtualuco.R
-import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
+import com.example.tiendavirtualuco.homepageproductos.service.DailyNotificationReceiver
 import com.example.tiendavirtualuco.persistence.dao.ProductoDao
 import com.example.tiendavirtualuco.persistence.data.local.DatabaseProvider
 import com.example.tiendavirtualuco.persistence.entity.ProductoEntity
-import com.example.tiendavirtualuco.pie.service.command.CommandsViewsEnum
-import com.example.tiendavirtualuco.pie.service.command.settings.CommandFactory
 import com.example.tiendavirtualuco.pie.service.command.settings.CommandManager
 import com.example.tiendavirtualuco.pie.service.observe.implementation.LoggingCommandObserver
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.util.UUID
+import java.util.Calendar
 
 class PaginaPrincipalProductosActivity : AppCompatActivity() {
     private lateinit var productoDao: ProductoDao
+    private val CHANNEL_ID = "daily_notification_channel"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +33,68 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
         CommandManager.addObserver(LoggingCommandObserver())
         initRecyclerView()
         initDatabase()
+        createNotificationChannel()
+        setDailyAlarm()
     }
 
     private fun initRecyclerView(){
         val recyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recycler_productos)
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
         recyclerView.adapter = AdaptadorProducto(ProveedorProducto.listaProductos)
+    }
+
+    private fun setDailyAlarm() {
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, DailyNotificationReceiver::class.java).apply {
+            action = "com.example.tiendavirtualuco.DAILY_NOTIFICATION"
+        }
+        val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+
+        // Configura el tiempo de activación de la notificación a las 12:33 p.m.
+        val calendar = Calendar.getInstance().apply {
+            timeInMillis = System.currentTimeMillis()
+            set(Calendar.HOUR_OF_DAY, 5)
+            set(Calendar.MINUTE, 51)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+
+            // Si la hora ya ha pasado hoy, configura la alarma para el día siguiente
+            if (before(Calendar.getInstance())) {
+                Log.d("DailyNotificationReceiver", "setDailyAlarm before")
+                add(Calendar.DAY_OF_YEAR, 1)
+            }
+        }
+        Log.d("DailyNotificationReceiver", "setDailyAlarm CALENDAR: ${calendar.timeInMillis}")
+        Log.d("DailyNotificationReceiver", "setDailyAlarm CEL: ${System.currentTimeMillis()}")
+        // Usar setExactAndAllowWhileIdle para garantizar la precisión
+        AlarmManagerCompat.setExactAndAllowWhileIdle(
+            alarmManager,
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            pendingIntent
+        )
+
+
+        //Para probar la notificación en 5 segundos
+//        val triggerTime = System.currentTimeMillis() + 5000 // 5 segundos
+//        alarmManager.setExact(
+//            AlarmManager.RTC_WAKEUP,
+//            triggerTime,
+//            pendingIntent
+//        )
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            val channelName = "Daily Notification Channel"
+            val channelDescription = "Channel for daily notifications"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val notificationChannel = NotificationChannel(CHANNEL_ID, channelName, importance).apply {
+                description = channelDescription
+            }
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
     }
 
     private fun initDatabase() {
