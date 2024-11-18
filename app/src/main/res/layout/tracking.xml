@@ -104,6 +104,7 @@
             android:padding="16dp">
 
             <View
+                android:id="@+id/step1Circle"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:background="@drawable/circle_background_green"
@@ -153,6 +154,7 @@
             android:padding="16dp">
 
             <View
+                android:id="@+id/step2Circle"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:background="@drawable/circle_background_green"
@@ -202,6 +204,7 @@
             android:padding="16dp">
 
             <View
+                android:id="@+id/step3Circle"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:background="@drawable/circle_background_green"
@@ -249,6 +252,7 @@
             android:padding="16dp">
 
             <View
+                android:id="@+id/step4Circle"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_alignParentStart="true"
