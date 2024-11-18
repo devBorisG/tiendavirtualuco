@@ -49,6 +49,5 @@ class VistaProducto(itemView: View) : RecyclerView.ViewHolder(itemView) {
             tvPorcentajeDescuento.visibility = View.GONE
         }
 
-        // Puedes añadir lógica para los iconos de "Me Gusta" y "Agregar" aquí si es necesario
     }
 }
