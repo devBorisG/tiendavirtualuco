@@ -17,8 +17,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Leer las variables de entorno
+        val apiCredentials: String = (project.findProperty("API_CREDENTIALS") as? String) ?: ""
+        buildConfigField("String", "API_CREDENTIALS", "\"$apiCredentials\"")
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
