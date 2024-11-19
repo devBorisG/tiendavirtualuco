@@ -1,6 +1,5 @@
-package com.example.tiendavirtualuco.adapter
+package com.example.tiendavirtualuco.tracking
 
-import Product
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View

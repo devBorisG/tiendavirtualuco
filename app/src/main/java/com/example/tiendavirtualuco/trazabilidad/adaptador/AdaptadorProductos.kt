@@ -9,7 +9,7 @@ import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.trazabilidad.Producto
 
 
-// Cambié 'Product' a 'Producto' ya que esa es la clase que deberías estar utilizando
+// Cambié 'com.example.tiendavirtualuco.tracking.Product' a 'Producto' ya que esa es la clase que deberías estar utilizando
 class AdaptadorProductos(private val productList: List<Producto>) :
     RecyclerView.Adapter<AdaptadorProductos.ProductViewHolder>() {
 
@@ -41,7 +41,7 @@ class AdaptadorProductos(private val productList: List<Producto>) :
 
 
     class VistaDeProductos(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(producto: Producto) {  // Aquí usamos la clase Producto en lugar de Product
+        fun bind(producto: Producto) {  // Aquí usamos la clase Producto en lugar de com.example.tiendavirtualuco.tracking.Product
             // Aquí asignas los datos del producto a las vistas del layout
             // Ejemplo de cómo asignar valores a las vistas del layout:
             itemView.findViewById<TextView>(R.id.productName).text = producto.nombre

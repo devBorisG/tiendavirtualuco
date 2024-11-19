@@ -59,6 +59,29 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.glide.v4142)
 
+    // Retrofit y OkHttp
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    // Gson (si es necesario)
+    implementation(libs.gson)
+
+    // Encrypted SharedPreferences
+    implementation(libs.security.crypto)
+
+    // Lifecycle (opcional)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata.ktx)
+
+    // Retrofit Coroutines Adapter (opcional)
+    implementation(libs.retrofit.coroutines.adapter)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

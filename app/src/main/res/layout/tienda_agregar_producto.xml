@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/removeStoreButton" />
 
-    <!-- Add Product Button -->
+    <!-- Add com.example.tiendavirtualuco.tracking.Product Button -->
     <Button
         android:id="@+id/addProductButton"
         android:layout_width="wrap_content"

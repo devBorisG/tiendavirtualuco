@@ -5,8 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tracking")
 data class TrackingEntity(
-    @PrimaryKey(autoGenerate = true) val idTrack: Int = 0,
+    @PrimaryKey(autoGenerate = true) val primaryKey: Int = 0, // Clave primaria única generada por Room
+    val idTrack: Int, // Puede repetirse
     val status: String,
     val location: String,
-    val timestamp: String,
+    val timestamp: String
 )
