@@ -17,8 +17,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Leer las variables de entorno
+        val apiCredentials: String = (project.findProperty("API_CREDENTIALS") as? String) ?: ""
+        buildConfigField("String", "API_CREDENTIALS", "\"$apiCredentials\"")
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -42,6 +49,29 @@ room {
 }
 
 dependencies {
+    // Retrofit y OkHttp
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    // Gson (si es necesario)
+    implementation(libs.gson)
+
+    // Encrypted SharedPreferences
+    implementation(libs.security.crypto)
+
+    // Lifecycle (opcional)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata.ktx)
+
+    // Retrofit Coroutines Adapter (opcional)
+    implementation(libs.retrofit.coroutines.adapter)
+
     // Dependencia para el compilador de Room
     ksp(libs.androidx.room.compiler.v270alpha01)
 
