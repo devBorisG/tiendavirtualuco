@@ -21,11 +21,20 @@ class AdaptadorFavorito(private val listFavorito: MutableList<ModeloFavorito> ):
     override fun onBindViewHolder(holder: VistaFavorito, position: Int) {
         val item = listFavorito[position]
         holder.render(item)
+
+        // Botón para eliminar un favorito
         val btnEliminar = holder.itemView.findViewById<Button>(R.id.btnEliminar)
         btnEliminar.setOnClickListener {
             listFavorito.removeAt(position)
-            notifyItemRemoved(position)
-            notifyItemRangeChanged(position, listFavorito.size)
+            notifyItemRemoved(position) // Notificar el cambio al adaptador
+            notifyItemRangeChanged(position, listFavorito.size) // Actualizar los índices restantes
         }
+    }
+
+    // Método para actualizar la lista completa
+    fun actualizarLista(nuevaLista: List<ModeloFavorito>) {
+        listFavorito.clear() // Limpiar la lista actual
+        listFavorito.addAll(nuevaLista) // Agregar los nuevos datos
+        notifyDataSetChanged() // Notificar al adaptador que se actualizó la lista
     }
 }
