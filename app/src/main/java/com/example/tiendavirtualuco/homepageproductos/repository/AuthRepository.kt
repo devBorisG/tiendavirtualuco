@@ -1,13 +1,12 @@
 package com.example.tiendavirtualuco.homepageproductos.repository
-import com.example.tiendavirtualuco.BuildConfig.API_CREDENTIALS
 import com.example.tiendavirtualuco.homepageproductos.model.AuthRequest
 import com.example.tiendavirtualuco.homepageproductos.network.RetrofitClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class AuthRepository {
-    private val predefinedUsername: String = API_CREDENTIALS
-    private val predefinedPassword: String = API_CREDENTIALS
+    private val predefinedUsername: String = "prueba"
+    private val predefinedPassword: String = "prueba"
 
     suspend fun authenticate(): Result<String> {
         return withContext(Dispatchers.IO) {

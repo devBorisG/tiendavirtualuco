@@ -1,6 +1,5 @@
 package com.example.tiendavirtualuco.favoritos.adapter
 
-import android.icu.text.Transliterator.Position
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
