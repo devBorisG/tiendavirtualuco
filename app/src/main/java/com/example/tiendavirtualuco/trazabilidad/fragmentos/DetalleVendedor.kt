@@ -16,7 +16,7 @@ class DetalleVendedor : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflar el layout para este fragmento
-        return inflater.inflate(R.layout.detalle_vendedor_trazabilidad, container, false)
+        return inflater.inflate(R.layout.trazabilidad_detalle_vendedor, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

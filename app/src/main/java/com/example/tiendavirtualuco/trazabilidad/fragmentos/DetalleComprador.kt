@@ -17,7 +17,7 @@ class DetalleComprador : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflar el layout para este fragmento
-        return inflater.inflate(R.layout.detalle_comprador_trazabilidad, container, false)
+        return inflater.inflate(R.layout.trazabilidad_detalle_comprador, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,9 +26,9 @@ class DetalleComprador : Fragment() {
 
         val btnOrderTracking = view.findViewById<Button>(R.id.btnOrderTracking)
         btnOrderTracking.setOnClickListener {
-
+            // Acciones cuando se hace clic en el botón
         }
 
-
+        // Puedes agregar más lógica aquí para interactuar con otras vistas
     }
 }

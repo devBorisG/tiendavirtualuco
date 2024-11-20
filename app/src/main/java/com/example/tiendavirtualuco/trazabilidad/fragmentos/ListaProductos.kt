@@ -9,7 +9,7 @@ import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.trazabilidad.adaptador.AdaptadorProductos
 import com.example.tiendavirtualuco.trazabilidad.Producto // Importamos tu clase Producto
 
-class ProductListFragment : Fragment(R.layout.trazabilidad_item_product_recicleview) {
+class ListaProductos : Fragment(R.layout.trazabilidad_pagina_principal_productos_recyvleview) {
 
     private lateinit var productAdapter: AdaptadorProductos
 

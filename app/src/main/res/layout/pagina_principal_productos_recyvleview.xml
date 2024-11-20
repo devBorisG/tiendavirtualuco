@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
@@ -27,18 +28,20 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            >
+            android:layout_marginTop="15dp">
 
+            <!-- Imagen del Producto -->
             <ImageView
                 android:id="@+id/imageViewProducto"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@color/primary_color"
+                android:scaleType="centerCrop"
                 android:contentDescription="@string/imagen_del_producto"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <!-- Nombre del Producto -->
             <TextView
                 android:id="@+id/nombre_producto"
                 android:layout_width="100dp"
@@ -52,6 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageViewProducto"
                 tools:text="Nombre Producto" />
 
+            <!-- Icono de Me Gusta -->
             <ImageView
                 android:id="@+id/icono_megusta"
                 android:layout_width="24dp"
@@ -62,6 +66,7 @@
                 android:layout_marginEnd="8dp"
                 app:srcCompat="@drawable/baseline_favorite_border_24" />
 
+            <!-- Icono de Agregar -->
             <ImageView
                 android:id="@+id/icono_agregar"
                 android:layout_width="24dp"
@@ -71,18 +76,51 @@
                 app:layout_constraintTop_toTopOf="@id/icono_megusta"
                 app:srcCompat="@drawable/baseline_add_circle_outline_24" />
 
+            <!-- Precio Original (con tachado) -->
+            <TextView
+                android:id="@+id/precio_original_producto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="$100.00"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/imageViewProducto"
+                app:layout_constraintTop_toBottomOf="@id/nombre_producto"
+                />
+
+            <!-- Precio con Oferta -->
+
+            <!-- Porcentaje de Descuento -->
             <TextView
                 android:id="@+id/precio_producto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/primary_color"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@+id/pagina_principal_productos_recyclerview"
-                app:layout_constraintTop_toBottomOf="@+id/icono_agregar"
-                tools:text="$ 20" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/precio_original_producto"
+                tools:text="$ 80.00" />
+
+            <TextView
+                android:id="@+id/porcentaje_descuento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/primary_color"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:text="30%"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@+id/precio_original_producto"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_producto" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

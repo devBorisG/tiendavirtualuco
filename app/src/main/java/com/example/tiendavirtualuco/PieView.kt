@@ -1,12 +1,14 @@
 package com.example.tiendavirtualuco
 
 import android.content.Context
-import android.content.Intent
 import android.util.AttributeSet
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
+import com.example.tiendavirtualuco.pie.service.command.CommandsViewsEnum
+import com.example.tiendavirtualuco.pie.service.command.settings.CommandFactory
+import com.example.tiendavirtualuco.pie.service.command.settings.CommandManager
 
 class PieView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -25,13 +27,23 @@ class PieView @JvmOverloads constructor(
         imgProductos = findViewById<ImageButton>(R.id.icMisProductos)
         imgHistoricoProductos = findViewById<ImageButton>(R.id.icHistorialCompra)
         imgFavoritos = findViewById<ImageButton>(R.id.icFavoritos)
-        configurarIcon()
+        initIcons()
     }
 
-    fun configurarIcon() {
-        imgFavoritos.setOnClickListener {
-            val intent = Intent(context, MisFavoritosActivity::class.java)
-            context.startActivity(intent)
+    private fun initIcons() {
+        val iconCommandMap = mapOf(
+            R.id.icFavoritos to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java)
+            // TODO: Add more icons and their corresponding commands here
+        )
+
+        for ((iconId, commnandInfo) in iconCommandMap) {
+            val (commandType, destination) = commnandInfo
+            val icon = findViewById<android.widget.ImageView>(iconId)
+            val command = CommandFactory.createCommand(commandType, context, destination)
+            CommandManager.registerCommand(command, commandType)
+            icon.setOnClickListener {
+                CommandManager.executeCommand(commandType)
+            }
         }
     }
 }
