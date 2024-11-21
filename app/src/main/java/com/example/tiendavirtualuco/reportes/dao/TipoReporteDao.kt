@@ -17,4 +17,6 @@ interface TipoReporteDao {
 
     @Query("DELETE FROM tiporeporte")
     suspend fun clearTable()
+
+
 }
