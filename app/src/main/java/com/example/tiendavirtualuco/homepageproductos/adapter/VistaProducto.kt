@@ -26,24 +26,26 @@ class VistaProducto(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Configurar el nombre del producto
         tvNombre.text = producto.nombreProducto
 
+
         // Verificar si el producto tiene una oferta
-        if (producto.oferta != null) {
+        if (producto.es_oferta) {
             // Mostrar precio original con tachado
-            tvPrecioOriginal.text = "$${producto.oferta?.precioOriginal}"
+            tvPrecioOriginal.text =
+                itemView.context.getString(R.string.precio_original, producto.precioProducto)
             tvPrecioOriginal.paintFlags = tvPrecioOriginal.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             tvPrecioOriginal.visibility = View.VISIBLE
 
             // Mostrar precio de oferta
-            tvPrecioOferta.text = "$${producto.oferta?.precioOferta}"
+            tvPrecioOferta.text = itemView.context.getString(R.string.precio_oferta, producto.precio_oferta)
             tvPrecioOferta.visibility = View.VISIBLE
 
             // Mostrar porcentaje de descuento
-            tvPorcentajeDescuento.text = "${producto.oferta?.porcentajeDescuento}"
+            tvPorcentajeDescuento.text = producto.porcentaje_descuento
             tvPorcentajeDescuento.visibility = View.VISIBLE
         } else {
             // No hay oferta, ocultar los campos relacionados
             tvPrecioOriginal.visibility = View.GONE
-            tvPrecioOferta.text = "${producto.precioProducto}"
+            tvPrecioOferta.text = itemView.context.getString(R.string.precio_original, producto.precioProducto)
             tvPrecioOferta.paintFlags = tvPrecioOferta.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
             tvPrecioOferta.visibility = View.VISIBLE
             tvPorcentajeDescuento.visibility = View.GONE

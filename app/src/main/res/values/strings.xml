@@ -93,6 +93,15 @@
     <string name="visitar">Visitar</string>
     <string name="jap_store">JAP Store</string>
     <string name="todo">TODO</string>
+    <string name="oferta_aparecer_aqu">Oferta aparecerá aquí</string>
+    <string name="Price_Default">$100.00</string>
+    <string name="precio_original">$%1$.2f</string>
+    <string name="precio_oferta">$%1$.2f</string>
+    <string name="porcentaje_descuento">$%1$s</string>
+    <string name="Default_percentage">30%</string>
+    <string name="error_ofertas">Error al obtener las ofertas: %1$s</string>
+    <string name="error_autenticacion">Error de autenticación: %1$s</string>
+    <string name="error_inesperado">Ocurrió un error inesperado: %1$s</string>
 
 
 </resources>
