@@ -14,27 +14,23 @@ class AdaptadorFavorito(private val listFavorito: MutableList<ModeloFavorito> ):
         return VistaFavorito(layoutInflater.inflate(R.layout.mis_favoritos_recyclerview, parent, false))
     }
 
-    override fun getItemCount(): Int {
-        return listFavorito.size
-    }
+    override fun getItemCount(): Int = listFavorito.size
 
     override fun onBindViewHolder(holder: VistaFavorito, position: Int) {
         val item = listFavorito[position]
         holder.render(item)
 
-        // Botón para eliminar un favorito
         val btnEliminar = holder.itemView.findViewById<Button>(R.id.btnEliminar)
         btnEliminar.setOnClickListener {
             listFavorito.removeAt(position)
-            notifyItemRemoved(position) // Notificar el cambio al adaptador
-            notifyItemRangeChanged(position, listFavorito.size) // Actualizar los índices restantes
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, listFavorito.size)
         }
     }
 
-    // Método para actualizar la lista completa
     fun actualizarLista(nuevaLista: List<ModeloFavorito>) {
-        listFavorito.clear() // Limpiar la lista actual
-        listFavorito.addAll(nuevaLista) // Agregar los nuevos datos
-        notifyDataSetChanged() // Notificar al adaptador que se actualizó la lista
+        listFavorito.clear()
+        listFavorito.addAll(nuevaLista)
+        notifyDataSetChanged()
     }
 }

@@ -10,13 +10,16 @@ import com.example.tiendavirtualuco.persistence.entity.ProductoConFavorito
 
 @Dao
 interface FavoritoDao {
-    @Transaction
-    @Query("SELECT * FROM producto WHERE id IN (SELECT productoId FROM favorito)")
-    suspend fun obtenerFavoritos(): List<ProductoConFavorito>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertar(favorito: FavoritoEntity)
-    @Query("DELETE FROM favorito WHERE productoId = :productoId")
-    suspend fun eliminarFavoritoPorProductoId(productoId: Int)
-    @Query("SELECT COUNT(*) > 0 FROM favorito WHERE productoId = :productoId")
-    suspend fun esFavorito(productoId: Int): Boolean
+    suspend fun insertarFavorito(favorito: FavoritoEntity)
+    @Insert
+    suspend fun insertarFavoritos(favoritos: List<FavoritoEntity>)
+    @Transaction
+    @Query("SELECT * FROM producto INNER JOIN favorito ON producto.id = favorito.productoId WHERE favorito.email = :email")
+    suspend fun obtenerFavoritosConProductosPorEmail(email: String): List<ProductoConFavorito>
+    @Transaction
+    @Query("SELECT * FROM producto INNER JOIN favorito ON producto.id = favorito.productoId")
+    suspend fun obtenerTodosFavoritosConProductos(): List<ProductoConFavorito>
+    @Query("DELETE FROM favorito WHERE id = :favoritoId")
+    suspend fun eliminarFavoritoPorId(favoritoId: Int)
 }

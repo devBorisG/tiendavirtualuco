@@ -8,21 +8,16 @@ import com.example.tiendavirtualuco.persistence.entity.ProductoConFavorito
 class FavoritoRepositoryImpl(
     private val favoritoDao: FavoritoDao
 ) : FavoritoRepository {
-
-    override suspend fun agregarAFavoritos(productoId: Int) {
-        val favorito = FavoritoEntity(productoId = productoId)
-        favoritoDao.insertar(favorito)
+    override suspend fun obtenerFavoritosConProductosPorEmail(email: String): List<ProductoConFavorito> {
+        return favoritoDao.obtenerFavoritosConProductosPorEmail(email)
     }
-
-    override suspend fun obtenerFavoritos(): List<ProductoConFavorito> {
-        return favoritoDao.obtenerFavoritos()
+    override suspend fun obtenerTodosFavoritosConProductos(): List<ProductoConFavorito> {
+        return favoritoDao.obtenerTodosFavoritosConProductos()
     }
-
-    override suspend fun eliminarFavorito(productoId: Int) {
-        favoritoDao.eliminarFavoritoPorProductoId(productoId)
+    override suspend fun eliminarFavoritoPorId(favoritoId: Int) {
+        favoritoDao.eliminarFavoritoPorId(favoritoId)
     }
-
-    override suspend fun esFavorito(productoId: Int): Boolean {
-        return favoritoDao.esFavorito(productoId)
+    override suspend fun insertarFavorito(favorito: FavoritoEntity) {
+        favoritoDao.insertarFavorito(favorito)
     }
 }

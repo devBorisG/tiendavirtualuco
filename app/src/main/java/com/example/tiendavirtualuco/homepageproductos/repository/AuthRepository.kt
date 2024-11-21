@@ -5,8 +5,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class AuthRepository {
-    private val predefinedUsername: String = "prueba"
-    private val predefinedPassword: String = "prueba"
+    private val predefinedUsername: String = ""
+    private val predefinedPassword: String = ""
 
     suspend fun authenticate(): Result<String> {
         return withContext(Dispatchers.IO) {

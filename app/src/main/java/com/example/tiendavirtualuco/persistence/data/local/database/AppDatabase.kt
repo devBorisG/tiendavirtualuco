@@ -7,7 +7,7 @@ import com.example.tiendavirtualuco.persistence.dao.ProductoDao
 import com.example.tiendavirtualuco.persistence.entity.FavoritoEntity
 import com.example.tiendavirtualuco.persistence.entity.ProductoEntity
 
-@Database(entities = [ProductoEntity::class, FavoritoEntity::class], version = 2)
+@Database(entities = [ProductoEntity::class, FavoritoEntity::class], version = 5)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun productoDao(): ProductoDao
     abstract fun favoritoDao(): FavoritoDao
