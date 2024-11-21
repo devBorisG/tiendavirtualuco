@@ -6,8 +6,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class AuthRepository {
-    private val predefinedUsername: String = API_CREDENTIALS
-    private val predefinedPassword: String = API_CREDENTIALS
+    private val predefinedUsername: String = "prueba"//API_CREDENTIALS
+    private val predefinedPassword: String = "prueba"//API_CREDENTIALS
 
     suspend fun authenticate(): Result<String> {
         return withContext(Dispatchers.IO) {

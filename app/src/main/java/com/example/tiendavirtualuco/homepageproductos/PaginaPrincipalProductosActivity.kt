@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
 import com.example.tiendavirtualuco.homepageproductos.manager.TokenManager
-import com.example.tiendavirtualuco.homepageproductos.model.ModeloProducto
+import com.example.tiendavirtualuco.homepageproductos.mapper.toProductoEntity
 import com.example.tiendavirtualuco.homepageproductos.network.RetrofitClient
 import com.example.tiendavirtualuco.homepageproductos.repository.AuthRepository
 import com.example.tiendavirtualuco.homepageproductos.repository.OfertaRepository
@@ -31,7 +31,6 @@ import com.example.tiendavirtualuco.pie.service.command.settings.CommandManager
 import com.example.tiendavirtualuco.pie.service.observe.implementation.LoggingCommandObserver
 import kotlinx.coroutines.launch
 import java.util.Calendar
-import kotlin.math.log
 
 class PaginaPrincipalProductosActivity : AppCompatActivity() {
     private lateinit var productoDao: ProductoDao
@@ -85,13 +84,32 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
                                 val oferta = ofertas.find { it.idProducto == producto.id }
                                 if (oferta != null){
                                     producto.copy(
-                                        precioProducto = "$${oferta.precioOferta}",
-                                        oferta = oferta
+                                        id = oferta.idProducto,
+                                        precio_oferta = oferta.precioOferta,
+                                        es_oferta = true,
+                                        precioProducto = oferta.precioOriginal,
+                                        porcentaje_descuento = oferta.porcentajeDescuento
                                     )
                                 }else{
                                     producto
                                 }
                             }
+                            // Convertir los productos a entidades de Room
+                            val productosEntity: List<ProductoEntity> = productosConOfertas.map { producto ->
+                                toProductoEntity(
+                                    id = producto.id,
+                                    nombre = producto.nombreProducto,
+                                    cantidad = producto.cantidad,
+                                    precio = producto.precioProducto,
+                                    descripcion = producto.descripcion,
+                                    url_imagen = producto.imagenProducto,
+                                    es_oferta = producto.es_oferta,
+                                    precio_oferta = producto.precio_oferta,
+                                    precio_envio = producto.precio_envio
+                                )
+                            }
+                            // Insertar los productos con ofertas y sin ofertas en la base de datos
+                            insertarProductos(productosEntity)
                             // Actualizar el adaptador con la lista modificada
                             (recyclerProductos.adapter as AdaptadorProducto).updateProductos(productosConOfertas)
                             recyclerProductos.visibility = View.VISIBLE
@@ -102,16 +120,16 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
                         }
                     }.onFailure { error ->
                         // Manejar errores al obtener las ofertas
-                        tvOferta.text = "Error al obtener las ofertas: ${error.message}"
+                        tvOferta.text = getString(R.string.error_ofertas, error.message)
                         tvOferta.visibility = View.VISIBLE
                     }
                 }.onFailure { error ->
                     // Manejar errores de autenticación
-                    tvOferta.text = "Error de autenticación: ${error.message}"
+                    tvOferta.text = getString(R.string.error_autenticacion, error.message)
                     tvOferta.visibility = View.VISIBLE
                 }
             } catch (e: Exception) {
-                tvOferta.text = "Ocurrió un error inesperado: ${e.message}"
+                tvOferta.text = getString(R.string.error_inesperado, e.message)
                 tvOferta.visibility = View.VISIBLE
             } finally {
                 // Ocultar el ProgressBar después de completar las operaciones
@@ -121,7 +139,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView(){
-        val recyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recycler_productos)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_productos)
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
         recyclerView.adapter = AdaptadorProducto(ProveedorProducto.listaProductos.toMutableList())
     }
@@ -180,58 +198,31 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
         }
     }
 
+    private fun insertarProductos(listaEntidades: List<ProductoEntity>) {
+        // Lanzar una corrutina para operaciones de base de datos
+        lifecycleScope.launch {
+            val listaDB: List<ProductoEntity> = productoDao.getAllProductos()
+            if (listaDB != listaEntidades) {
+                Log.d(
+                    "PaginaPrincipalProductosActivity",
+                    "Insertando productos en la base de datos"
+                )
+                productoDao.insertProductos(listaEntidades)
+            } else {
+                Log.d(
+                    "PaginaPrincipalProductosActivity",
+                    "Los productos ya están en la base de datos"
+                )
+            }
+            // Mostrar los productos en el logcat
+            productoDao.getAllProductos().forEach {
+                Log.d("PaginaPrincipalProductosActivity LISTA DB", "Producto: $it")
+            }
+        }
+    }
+
     private fun initDatabase() {
         val db = DatabaseProvider.getDatabase(this)
         productoDao = db.productoDao()
-
-        // Lanzar una corrutina para operaciones de base de datos
-        lifecycleScope.launch {
-            // Insertar productos de prueba
-            insertarProductosDePrueba()
-
-            // Consultar productos y actualizar la UI
-            consultarYActualizarProductos()
-        }
     }
-
-    private suspend fun insertarProductosDePrueba() {
-        val productosDePrueba = listOf(
-            ProductoEntity(
-                nombre = "Producto A",
-                cantidad = 10,
-                precio = 100.0,
-                descripcion = "Descripción del Producto A",
-                url_imagen = "https://www.ejemplo.com/imagenA.jpg",
-                es_oferta = false,
-                precio_oferta = 0.0,
-                precio_envio = 10.0
-            ),
-            ProductoEntity(
-                nombre = "Producto B",
-                cantidad = 5,
-                precio = 50.0,
-                descripcion = "Descripción del Producto B",
-                url_imagen = "https://www.ejemplo.com/imagenB.jpg",
-                es_oferta = true,
-                precio_oferta = 45.0,
-                precio_envio = 5.0
-            ),
-            // Agrega más productos si lo deseas
-        )
-
-        // Insertar productos en la base de datos
-        productoDao.insertProductos(productosDePrueba)
-    }
-
-    private suspend fun consultarYActualizarProductos() {
-        // Consultar todos los productos
-        // Consultar todos los productos
-        val listaProductos = productoDao.getAllProductos()
-
-        // Imprimir los productos en Logcat
-        listaProductos.forEach { producto ->
-            Log.d("Producto", "ID: ${producto.id}, Nombre: ${producto.nombre}")
-        }
-    }
-
 }
