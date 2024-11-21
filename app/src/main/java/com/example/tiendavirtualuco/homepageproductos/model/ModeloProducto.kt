@@ -3,7 +3,12 @@ package com.example.tiendavirtualuco.homepageproductos.model
 data class ModeloProducto (
     val id: Int,
     val nombreProducto: String,
-    val precioProducto: String,
+    val cantidad: Int,
+    val precioProducto: Double,
+    val descripcion: String,
     val imagenProducto: String,
-    var oferta: Ofertas? = null
+    val es_oferta: Boolean,
+    val precio_oferta: Double,
+    val precio_envio: Double,
+    val porcentaje_descuento: String
 )

@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
 import com.example.tiendavirtualuco.homepageproductos.manager.TokenManager
-import com.example.tiendavirtualuco.homepageproductos.model.ModeloProducto
 import com.example.tiendavirtualuco.homepageproductos.network.RetrofitClient
 import com.example.tiendavirtualuco.homepageproductos.repository.AuthRepository
 import com.example.tiendavirtualuco.homepageproductos.repository.OfertaRepository
@@ -31,7 +30,6 @@ import com.example.tiendavirtualuco.pie.service.command.settings.CommandManager
 import com.example.tiendavirtualuco.pie.service.observe.implementation.LoggingCommandObserver
 import kotlinx.coroutines.launch
 import java.util.Calendar
-import kotlin.math.log
 
 class PaginaPrincipalProductosActivity : AppCompatActivity() {
     private lateinit var productoDao: ProductoDao
@@ -85,8 +83,11 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
                                 val oferta = ofertas.find { it.idProducto == producto.id }
                                 if (oferta != null){
                                     producto.copy(
-                                        precioProducto = "$${oferta.precioOferta}",
-                                        oferta = oferta
+                                        id = oferta.idProducto,
+                                        precio_oferta = oferta.precioOferta,
+                                        es_oferta = true,
+                                        precioProducto = oferta.precioOriginal,
+                                        porcentaje_descuento = oferta.porcentajeDescuento
                                     )
                                 }else{
                                     producto
@@ -102,16 +103,16 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
                         }
                     }.onFailure { error ->
                         // Manejar errores al obtener las ofertas
-                        tvOferta.text = "Error al obtener las ofertas: ${error.message}"
+                        tvOferta.text = getString(R.string.error_ofertas, error.message)
                         tvOferta.visibility = View.VISIBLE
                     }
                 }.onFailure { error ->
                     // Manejar errores de autenticación
-                    tvOferta.text = "Error de autenticación: ${error.message}"
+                    tvOferta.text = getString(R.string.error_autenticacion, error.message)
                     tvOferta.visibility = View.VISIBLE
                 }
             } catch (e: Exception) {
-                tvOferta.text = "Ocurrió un error inesperado: ${e.message}"
+                tvOferta.text = getString(R.string.error_inesperado, e.message)
                 tvOferta.visibility = View.VISIBLE
             } finally {
                 // Ocultar el ProgressBar después de completar las operaciones
@@ -121,7 +122,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView(){
-        val recyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recycler_productos)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_productos)
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
         recyclerView.adapter = AdaptadorProducto(ProveedorProducto.listaProductos.toMutableList())
     }
