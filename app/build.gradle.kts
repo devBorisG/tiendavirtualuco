@@ -3,6 +3,10 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.devtools.ksp") version "1.9.10-1.0.13"
     id("androidx.room") version "2.7.0-alpha10"
+    alias(libs.plugins.googleGmsGoogleServices)
+
+
+
 }
 
 android {
@@ -45,10 +49,32 @@ android {
 }
 
 room {
+    // Configuración del directorio de esquemas
     schemaDirectory("$projectDir/schemas")
 }
 
+ksp {
+    // Argumento para que Room genere los esquemas
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
+tasks.matching { task ->
+    task.name.contains("copyRoomSchemasToAndroidTestAssets")
+}.configureEach {
+    this.enabled = false
+}
+
 dependencies {
+    implementation("com.google.firebase:firebase-database-ktx:20.2.2")
+    // Firebase Realtime Database
+    implementation("com.google.firebase:firebase-database:20.4.2")
+
+    // Opcional: Firebase Authentication (si necesitas autenticación)
+    implementation("com.google.firebase:firebase-auth:22.1.2")
+
+    // Firebase Core para el seguimiento analítico (opcional)
+    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
+    implementation("com.jakewharton.timber:timber:5.0.1")
     // Retrofit y OkHttp
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -73,7 +99,8 @@ dependencies {
     implementation(libs.retrofit.coroutines.adapter)
 
     // Dependencia para el compilador de Room
-    ksp(libs.androidx.room.compiler.v270alpha01)
+    implementation("androidx.room:room-runtime:2.5.2")
+    ksp("androidx.room:room-compiler:2.5.2")
 
     // Dependencia para el runtime de Room
     implementation(libs.androidx.room.runtime)
@@ -86,8 +113,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.play.services.analytics.impl)
-
     implementation(libs.recyclerview)
     implementation(libs.glide.v4142)
 

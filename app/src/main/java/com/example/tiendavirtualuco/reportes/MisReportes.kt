@@ -1,53 +1,43 @@
 package com.example.tiendavirtualuco.reportes
 
-
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
 import com.example.tiendavirtualuco.R
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.lifecycleScope
+import com.example.tiendavirtualuco.reportes.data.local.DataBase
+import com.example.tiendavirtualuco.reportes.data.local.database.AppDatabase
+import com.example.tiendavirtualuco.reportes.entity.TipoReporteEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MisReportes : AppCompatActivity() {
     private var Elijaunaopcion: Spinner? = null
     private var detalleReporte: EditText? = null
     private var enviarButton: Button? = null
+    private lateinit var appDatabase: AppDatabase  // Base de datos
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.reporte)
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        // Inicializar la base de datos Room utilizando DataBase.getDatabase
+        appDatabase = DataBase.getDatabase(applicationContext) // Llamada correcta
 
-        val reports = listOf(
-            Report("230450230207483", "Completada", "15 de agosto de 2024 - 10:00", "Método de reporte: Entrega a domicilio", "220197701", "Apple iPhone 14 Pro 256 GB", "$5.000.000",R.drawable.baseline_home_24),
-            Report("230450230207484", "Pendiente", "1 de septiembre de 2024 - 12:45", "Método de reporte: Retiro en tienda", "220197702", "Samsung Galaxy S22 Ultra 128 GB", "$4.200.000",R.drawable.baseline_add_circle_outline_24),
-            Report("230450230207482", "Anulada", "30 de julio de 2024 - 15:32", "Método de reporte: Entrega de producto en sucursal de Servientrega", "220197700", "Dual SIM Redmi Note 13 Pro+ 5G Xiaomi 8/256 GB", "$1.503.900",R.drawable.baseline_shopping_bag_24)
-        )
-        recyclerView.adapter = ReporteAdapter(reports)
         // Inicializar componentes
         Elijaunaopcion = findViewById(R.id.Elijaunaopcion)
         detalleReporte = findViewById(R.id.editTextText)
         enviarButton = findViewById(R.id.button2)
 
-        // Opciones del Spinner
-        val listaOpciones = arrayOf(
-            "Elija una opcion", "No me gustó el producto", "Muy Pequeño",
-            "No me llego el producto solicitado", "No era lo que esperaba llego con defecto",
-            "Hice pago de producto y no llegó", "El producto no llego a su destino",
-            "Presentó diferencia con el material"
-        )
-        val adaptador: ArrayAdapter<String> = ArrayAdapter(this, R.layout.spinner_reportes, listaOpciones)
-        Elijaunaopcion?.adapter = adaptador
+        // Llenar el Spinner con las opciones de la base de datos
+        cargarOpciones()
 
         // Deshabilitar el botón de enviar al principio
         enviarButton?.isEnabled = false
@@ -69,6 +59,41 @@ class MisReportes : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+    }
+
+    // Método para insertar datos de ejemplo en la base de datos
+    private fun insertarDatosDeEjemplo() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            // Verificar si ya existen datos en la tabla para no insertarlos nuevamente
+            val opcionesExistentes = appDatabase.tipoReporteDao().getAllOptions()
+            if (opcionesExistentes.isEmpty()) {
+                val opciones = listOf(
+                    TipoReporteEntity(descripcion = "No me gustó el producto"),
+                    TipoReporteEntity(descripcion = "Muy Pequeño"),
+                    TipoReporteEntity(descripcion = "No me llego el producto solicitado"),
+                    TipoReporteEntity(descripcion = "No era lo que esperaba llego con defecto"),
+                    TipoReporteEntity(descripcion = "Hice pago de producto y no llegó"),
+                    TipoReporteEntity(descripcion = "El producto no llego a su destino"),
+                    TipoReporteEntity(descripcion = "Presentó diferencia con el material")
+                )
+                // Insertar las opciones de tipo de reporte en la base de datos
+                appDatabase.tipoReporteDao().insertOption(opciones)
+            }
+        }
+    }
+
+    // Método para cargar las opciones del Spinner desde la base de datos
+    private fun cargarOpciones() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val opciones = appDatabase.tipoReporteDao().getAllOptions()
+
+            // Ejecutamos en el hilo principal para actualizar la UI
+            runOnUiThread {
+                val listaOpciones = opciones.map { it.descripcion } // Extraemos la descripción de las opciones
+                val adaptador: ArrayAdapter<String> = ArrayAdapter(this@MisReportes, R.layout.spinner_reportes, listaOpciones)
+                Elijaunaopcion?.adapter = adaptador
+            }
+        }
     }
 
     private fun verificarCampos() {
