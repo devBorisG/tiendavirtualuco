@@ -1,4 +1,26 @@
 [versions]
+# Retrofit y OkHttp
+retrofit = "2.9.0"
+okhttp = "4.9.3"
+logging-interceptor = "4.9.3"
+
+# Gson
+gson = "2.8.8"
+
+# Coroutines
+coroutines = "1.6.4"
+
+# Retrofit Converter Gson
+converter-gson = "2.9.0"
+
+# Encrypted SharedPreferences
+security-crypto = "1.1.0-alpha03"
+
+# Retrofit Coroutines Adapter (opcional)
+retrofit-coroutines-adapter = "0.9.2"
+
+# Lifecycle (para ViewModel y LiveData, si se usa)
+lifecycle = "2.4.1"
 agp = "8.5.1"
 glideVersion = "4.14.2"
 kotlin = "1.9.0"
@@ -14,9 +36,45 @@ recyclerview = "1.2.0"
 
 glide = "4.16.0"
 kapt = "2.0.20"
+roomCompiler = "2.6.1"
+roomCompilerVersion = "2.7.0-alpha01"
+sqliteBundled = "2.3.0"
 
 [libraries]
+# Retrofit
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+
+# Retrofit Converter Gson
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converter-gson" }
+
+# OkHttp
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+
+# OkHttp Logging Interceptor
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "logging-interceptor" }
+
+# Gson
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
+# Coroutines
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Encrypted SharedPreferences
+security-crypto = { module = "androidx.security:security-crypto", version.ref = "security-crypto" }
+
+# Lifecycle (opcional)
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+
+# Retrofit Coroutines Adapter (opcional)
+retrofit-coroutines-adapter = { module = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter", version.ref = "retrofit-coroutines-adapter" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+androidx-room-compiler-v270alpha01 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompilerVersion" }
+androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqliteBundled" }
 glide-v4142 = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

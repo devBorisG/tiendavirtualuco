@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp") version "1.9.10-1.0.13"
+    id("androidx.room") version "2.7.0-alpha10"
 }
 
 android {
@@ -15,8 +17,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Leer las variables de entorno
+        val apiCredentials: String = (project.findProperty("API_CREDENTIALS") as? String) ?: ""
+        buildConfigField("String", "API_CREDENTIALS", "\"$apiCredentials\"")
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -35,7 +44,42 @@ android {
     }
 }
 
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
 dependencies {
+    // Retrofit y OkHttp
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    // Gson (si es necesario)
+    implementation(libs.gson)
+
+    // Encrypted SharedPreferences
+    implementation(libs.security.crypto)
+
+    // Lifecycle (opcional)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata.ktx)
+
+    // Retrofit Coroutines Adapter (opcional)
+    implementation(libs.retrofit.coroutines.adapter)
+
+    // Dependencia para el compilador de Room
+    ksp(libs.androidx.room.compiler.v270alpha01)
+
+    // Dependencia para el runtime de Room
+    implementation(libs.androidx.room.runtime)
+
+    // Dependencia opcional para SQLite empaquetado
+    implementation(libs.androidx.sqlite.bundled)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
