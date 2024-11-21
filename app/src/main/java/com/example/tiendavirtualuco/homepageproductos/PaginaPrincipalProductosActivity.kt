@@ -17,6 +17,7 @@ import androidx.core.app.AlarmManagerCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
+import com.example.tiendavirtualuco.detalleproducto.DetalleProductoActivity
 import com.example.tiendavirtualuco.homepageproductos.adapter.AdaptadorProducto
 import com.example.tiendavirtualuco.homepageproductos.manager.TokenManager
 import com.example.tiendavirtualuco.homepageproductos.mapper.toProductoEntity
@@ -141,7 +142,13 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
     private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_productos)
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
-        recyclerView.adapter = AdaptadorProducto(ProveedorProducto.listaProductos.toMutableList())
+        // Configurar el adaptador con el listener
+        val adapter = AdaptadorProducto(ProveedorProducto.listaProductos.toMutableList()) { detalleProducto ->
+            val intent = Intent(this, DetalleProductoActivity::class.java)
+            intent.putExtra("detalleProducto", detalleProducto) // Pasar el ModeloDetalleProducto
+            startActivity(intent)
+        }
+        recyclerView.adapter = adapter
     }
 
     private fun setDailyAlarm() {
@@ -175,8 +182,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
             pendingIntent
         )
 
-
-        //Para probar la notificación en 5 segundos
+//        Para probar la notificación en 5 segundos
 //        val triggerTime = System.currentTimeMillis() + 5000 // 5 segundos
 //        alarmManager.setExact(
 //            AlarmManager.RTC_WAKEUP,

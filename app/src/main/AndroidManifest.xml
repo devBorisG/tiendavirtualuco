@@ -63,8 +63,9 @@
             android:exported="true" />
         <activity
             android:name=".sellerRating.CommentAdapter"
-            android:exported="false" />
-        <activity android:name=".favoritos.MisFavoritosActivity" />
+            android:exported="true" />
+        <activity android:name=".favoritos.MisFavoritosActivity"
+            android:exported="true"/>
         <activity android:name=".detalleproducto.DetalleProductoActivity" />
         <activity
             android:name=".MainActivity"
@@ -84,9 +85,10 @@
         <activity
             android:name=".TrackingActivity"
             android:exported="true" />
-        <activity
-            android:name=".homepageproductos.PaginaPrincipalProductosActivity"
-            android:exported="true" />
+        <activity android:name=".homepageproductos.PaginaPrincipalProductosActivity"
+            android:exported="true"/>
+        <activity android:name=".trazabilidad.TrazabilidadProductosActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

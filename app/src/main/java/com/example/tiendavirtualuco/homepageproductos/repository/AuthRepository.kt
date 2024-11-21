@@ -1,11 +1,13 @@
 package com.example.tiendavirtualuco.homepageproductos.repository
-import com.example.tiendavirtualuco.BuildConfig.API_CREDENTIALS
 import com.example.tiendavirtualuco.homepageproductos.model.AuthRequest
 import com.example.tiendavirtualuco.homepageproductos.network.RetrofitClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class AuthRepository {
+    private val predefinedUsername: String = ""
+    private val predefinedPassword: String = ""
+
     private val predefinedUsername: String = "prueba"//API_CREDENTIALS
     private val predefinedPassword: String = "prueba"//API_CREDENTIALS
 

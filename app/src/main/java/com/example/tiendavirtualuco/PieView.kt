@@ -6,9 +6,11 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
+import com.example.tiendavirtualuco.homepageproductos.PaginaPrincipalProductosActivity
 import com.example.tiendavirtualuco.pie.service.command.CommandsViewsEnum
 import com.example.tiendavirtualuco.pie.service.command.settings.CommandFactory
 import com.example.tiendavirtualuco.pie.service.command.settings.CommandManager
+import com.example.tiendavirtualuco.trazabilidad.TrazabilidadProductosActivity
 import com.example.tiendavirtualuco.tienda.CrearTiendaActivity
 
 class PieView @JvmOverloads constructor(
@@ -34,13 +36,15 @@ class PieView @JvmOverloads constructor(
     private fun initIcons() {
         val iconCommandMap = mapOf(
             R.id.icFavoritos to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java),
-                    R.id.icMisProductos to Pair(CommandsViewsEnum.OPEN_FAVORITES, CrearTiendaActivity::class.java)
+            R.id.icBuscarOfertas to Pair(CommandsViewsEnum.OPEN_PRODUCT, PaginaPrincipalProductosActivity::class.java),
+            R.id.icHistorialCompra to Pair(CommandsViewsEnum.OPEN_HISTORY, TrazabilidadProductosActivity::class.java),
+            R.id.icMisProductos to Pair(CommandsViewsEnum.OPEN_FAVORITES, CrearTiendaActivity::class.java)
             // TODO: Add more icons and their corresponding commands here
         )
 
         for ((iconId, commnandInfo) in iconCommandMap) {
             val (commandType, destination) = commnandInfo
-            val icon = findViewById<android.widget.ImageView>(iconId)
+            val icon = findViewById<ImageView>(iconId)
             val command = CommandFactory.createCommand(commandType, context, destination)
             CommandManager.registerCommand(command, commandType)
             icon.setOnClickListener {

@@ -11,7 +11,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private const val BASE_URL = "https://pocapispringboot.azurewebsites.net/"
-
     private lateinit var tokenManager: TokenManager
 
     // Inicializar con contexto
@@ -44,5 +43,14 @@ object RetrofitClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
+    }
+
+    fun <T> createService(serviceClass: Class<T>): T {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(serviceClass)
     }
 }
