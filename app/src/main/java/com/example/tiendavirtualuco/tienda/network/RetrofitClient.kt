@@ -1,4 +1,4 @@
-package com.example.tiendavirtualuco.homepageproductos.network
+package com.example.tiendavirtualuco.tienda.network
 import android.content.Context
 import com.example.tiendavirtualuco.homepageproductos.manager.TokenManager
 import okhttp3.Interceptor
@@ -6,11 +6,12 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-//import com.example.tiendavirtualuco.tienda.network.ApiServiceTiendas
+import com.example.tiendavirtualuco.tienda.network.ApiService
 //import com.example.tiendavirtualuco.homepageproductos.network.ApiService
 
 object RetrofitClient {
     private const val BASE_URL = "https://pocapispringboot.azurewebsites.net/"
+
     private lateinit var tokenManager: TokenManager
 
     // Inicializar con contexto
@@ -43,14 +44,5 @@ object RetrofitClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
-    }
-
-    fun <T> createService(serviceClass: Class<T>): T {
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(serviceClass)
     }
 }

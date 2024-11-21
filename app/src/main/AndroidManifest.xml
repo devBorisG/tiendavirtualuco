@@ -2,24 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34"
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="34"
         tools:ignore="GradleOverrides" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -30,6 +39,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tiendavirtualuco"
         tools:targetApi="31">
+        <activity
+            android:name=".tienda.DetallesTiendaActivity"
+            android:exported="false" />
+
         <receiver
             android:name=".homepageproductos.service.DailyNotificationReceiver"
             android:enabled="true"
@@ -38,6 +51,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".tienda.TiendaAgregarProductoActivity"
             android:exported="true" />
@@ -62,10 +76,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityBuzonNotif"
-        android:exported="true"/>
-        <activity android:name=".DetalleNotificacionActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".MainActivityBuzonNotif"
+            android:exported="true" />
+        <activity
+            android:name=".DetalleNotificacionActivity"
+            android:exported="true" />
         <activity
             android:name=".TrackingActivity"
             android:exported="true" />

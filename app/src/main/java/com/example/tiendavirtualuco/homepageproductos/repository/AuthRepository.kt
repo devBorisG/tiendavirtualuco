@@ -8,6 +8,9 @@ class AuthRepository {
     private val predefinedUsername: String = ""
     private val predefinedPassword: String = ""
 
+    private val predefinedUsername: String = "prueba"//API_CREDENTIALS
+    private val predefinedPassword: String = "prueba"//API_CREDENTIALS
+
     suspend fun authenticate(): Result<String> {
         return withContext(Dispatchers.IO) {
             try {
