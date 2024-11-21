@@ -4,21 +4,34 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
+import com.example.tiendavirtualuco.detalleproducto.ModeloDetalleProducto
 import com.example.tiendavirtualuco.homepageproductos.model.ModeloProducto
 
-class AdaptadorProducto(private val listaProducto:MutableList<ModeloProducto>) : RecyclerView.Adapter<VistaProducto>(){
+class AdaptadorProducto(private val listaProducto:MutableList<ModeloProducto>,
+                        private val onProductoClick: (ModeloDetalleProducto) -> Unit) : RecyclerView.Adapter<VistaProducto>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VistaProducto {
         val layoutInflater = LayoutInflater.from(parent.context)
         return VistaProducto(layoutInflater.inflate(R.layout.pagina_principal_productos_recyvleview, parent, false))
     }
 
-    override fun getItemCount(): Int {
-        return listaProducto.size
-    }
+    override fun getItemCount(): Int = listaProducto.size
 
     override fun onBindViewHolder(holder: VistaProducto, position: Int) {
         val item = listaProducto[position]
         holder.render(item)
+        // Configurar clic para enviar el producto
+        holder.itemView.setOnClickListener {
+            val detalleProducto = ModeloDetalleProducto(
+                nombre = item.nombreProducto,
+                precio = (if (item.es_oferta) item.precio_oferta else item.precioProducto).toString(),
+                precioOriginal = (if (item.es_oferta) item.precioProducto else null).toString(),
+                descripcion = item.descripcion,
+                imagen = item.imagenProducto,
+                nombreTienda = "Tienda Virtual UCO"
+            )
+            onProductoClick(detalleProducto)
+        }
     }
 
     fun updateProductos(nuevosProductos: List<ModeloProducto>) {

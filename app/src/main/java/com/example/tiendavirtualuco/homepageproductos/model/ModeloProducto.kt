@@ -1,5 +1,7 @@
 package com.example.tiendavirtualuco.homepageproductos.model
 
+import java.io.Serializable
+
 data class ModeloProducto (
     val id: Int,
     val nombreProducto: String,
@@ -11,4 +13,4 @@ data class ModeloProducto (
     val precio_oferta: Double,
     val precio_envio: Double,
     val porcentaje_descuento: String
-)
+) : Serializable
