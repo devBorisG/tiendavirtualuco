@@ -16,5 +16,9 @@ interface ProductoDao {
     @Query("SELECT * FROM producto")
     suspend fun getAllProductos(): List<ProductoEntity>
 
-    // Otros métodos según tus necesidades...
+    @Query("DELETE FROM producto")
+    suspend fun deleteAllProductos()
+
+    @Query("DELETE FROM sqlite_sequence WHERE name='producto'")
+    suspend fun resetId()
 }
