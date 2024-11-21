@@ -9,8 +9,9 @@ object CommandFactory {
     fun createCommand(type: CommandsViewsEnum, context: Context, destination: Class<*>): Command {
         return when (type) {
             CommandsViewsEnum.OPEN_FAVORITES -> OpenViewsDynamicCommand(context, destination)
+            CommandsViewsEnum.OPEN_PRODUCT -> OpenViewsDynamicCommand(context, destination)
+            CommandsViewsEnum.OPEN_HISTORY -> OpenViewsDynamicCommand(context, destination)
             //TODO: Add more commands
-
             else -> throw IllegalArgumentException("Comando desconocido")
         }
     }
