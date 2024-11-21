@@ -1,4 +1,4 @@
-package com.example.tiendavirtualuco.homepageproductos.network
+package com.example.tiendavirtualuco.tienda.network
 import android.content.Context
 import com.example.tiendavirtualuco.homepageproductos.manager.TokenManager
 import okhttp3.Interceptor
@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-//import com.example.tiendavirtualuco.tienda.network.ApiServiceTiendas
+import com.example.tiendavirtualuco.tienda.network.ApiService
 //import com.example.tiendavirtualuco.homepageproductos.network.ApiService
 
 object RetrofitClient {

@@ -76,13 +76,11 @@
     <string name="tipo_usuario">Tipo Usuario</string>
 
 
-
-
     <string name="listado_de_usuarios">Listado de usuarios</string>
     <string name="tipo_de_usuario">Tipo de Usuario: </string>
     <string name="numero_de_identificaci_n">Numero de Identificación: </string>
     <string name="tipo_de_documento">Tipo de documento: </string>
-    <string name="apellido" >Apellidos: </string>
+    <string name="apellido">Apellidos: </string>
     <string name="imagen_del_equipo">Imagen del equipo</string>
     <string name="detalles_producto">Detalles Producto</string>
     <string name="trazabilidad_productos">Trazabilidad Productos</string>

@@ -9,6 +9,7 @@ import com.example.tiendavirtualuco.favoritos.MisFavoritosActivity
 import com.example.tiendavirtualuco.pie.service.command.CommandsViewsEnum
 import com.example.tiendavirtualuco.pie.service.command.settings.CommandFactory
 import com.example.tiendavirtualuco.pie.service.command.settings.CommandManager
+import com.example.tiendavirtualuco.tienda.CrearTiendaActivity
 
 class PieView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -32,7 +33,8 @@ class PieView @JvmOverloads constructor(
 
     private fun initIcons() {
         val iconCommandMap = mapOf(
-            R.id.icFavoritos to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java)
+            R.id.icFavoritos to Pair(CommandsViewsEnum.OPEN_FAVORITES, MisFavoritosActivity::class.java),
+                    R.id.icMisProductos to Pair(CommandsViewsEnum.OPEN_FAVORITES, CrearTiendaActivity::class.java)
             // TODO: Add more icons and their corresponding commands here
         )
 

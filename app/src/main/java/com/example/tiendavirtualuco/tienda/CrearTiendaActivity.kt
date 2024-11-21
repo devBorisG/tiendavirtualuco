@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiendavirtualuco.R
+import com.example.tiendavirtualuco.homepageproductos.manager.TokenManager
+import com.example.tiendavirtualuco.homepageproductos.network.RetrofitClient
 
 
 class CrearTiendaActivity : AppCompatActivity() {
@@ -15,9 +17,11 @@ class CrearTiendaActivity : AppCompatActivity() {
     private lateinit var storeDescriptionInput: EditText
     private lateinit var storeTypeInput: EditText
     private lateinit var addressInput: EditText
+    private lateinit var tokenManager: TokenManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.init(this)
         setContentView(R.layout.crear_tienda)
         // Referencias a los EditText
         storeNameInput = findViewById(R.id.storeNameInput)
@@ -28,6 +32,7 @@ class CrearTiendaActivity : AppCompatActivity() {
 
         // Configurar el botón de crear tienda con la validación
         botonCrearTiendaFormulario()
+        tokenManager = TokenManager(this)
     }
 
     private fun botonCrearTiendaFormulario() {
@@ -36,7 +41,9 @@ class CrearTiendaActivity : AppCompatActivity() {
             // Llamar a la función de validación
             if (validarFormulario()) {
                 // Si la validación es exitosa, proceder a la siguiente actividad
-                val intent = Intent(this, TiendaAgregarProductoActivity::class.java)
+                //val intent = Intent(this, TiendaAgregarProductoActivity::class.java)
+                val intent = Intent(this, DetallesTiendaActivity::class.java)
+                intent.putExtra("ID_TIENDA", 12345)
                 startActivity(intent)
             }
         }
