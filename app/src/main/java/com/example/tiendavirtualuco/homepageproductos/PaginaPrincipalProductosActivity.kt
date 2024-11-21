@@ -182,7 +182,7 @@ class PaginaPrincipalProductosActivity : AppCompatActivity() {
             pendingIntent
         )
 
-        //Para probar la notificación en 5 segundos
+//        Para probar la notificación en 5 segundos
 //        val triggerTime = System.currentTimeMillis() + 5000 // 5 segundos
 //        alarmManager.setExact(
 //            AlarmManager.RTC_WAKEUP,

@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendavirtualuco.R
 import com.example.tiendavirtualuco.favoritos.ModeloFavorito
 
-class AdaptadorFavorito(private val listFavorito: MutableList<ModeloFavorito> ): RecyclerView.Adapter<VistaFavorito>() {
+class AdaptadorFavorito(
+    private val listFavorito: MutableList<ModeloFavorito>,
+    private val onEliminarFavorito: (ModeloFavorito) -> Unit // Callback para eliminar favorito
+) : RecyclerView.Adapter<VistaFavorito>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VistaFavorito {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -19,9 +22,9 @@ class AdaptadorFavorito(private val listFavorito: MutableList<ModeloFavorito> ):
     override fun onBindViewHolder(holder: VistaFavorito, position: Int) {
         val item = listFavorito[position]
         holder.render(item)
-
         val btnEliminar = holder.itemView.findViewById<Button>(R.id.btnEliminar)
         btnEliminar.setOnClickListener {
+            onEliminarFavorito(item) // Notifica al Activity que el favorito debe eliminarse
             listFavorito.removeAt(position)
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, listFavorito.size)
